@@ -1,13 +1,15 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
-Circuit: * D:\Github\C2\reguladorB.asc
-Start Time: Mon Sep  9 19:06:13 2024
+Circuit: * C:\Users\leone\Documents\repos\C2\reguladorB.asc
+Start Time: Wed Sep 11 12:52:31 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
 Warning: Multiple definitions of model "bc847b" Type: BJT
+Error on line 10 : rl vo 0 8*(1-time)
+	 Unknown parameter "*"
 solver = Normal
-Maximum thread count: 12
+Maximum thread count: 16
 tnom = 27
 temp = 27
 method = modified trap
@@ -38,5 +40,7 @@ Source Step = 63.6364%
 Source Step = 93.9394%
 Source stepping succeeded in finding the operating point.
 
-Total elapsed time: 0.949 seconds.
+
+
+Total elapsed time: 1.008 seconds.
 
