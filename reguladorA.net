@@ -7,7 +7,7 @@ Q6 N018 N018 N025 0 BC547B
 R1 Vref N018 200
 R2 Vreg N003 0.1k
 R3 Vreg N002 0.1k
-RL Vo 0 50
+RL Vo 0 R = 100*(1-time)
 Q7 N001 N007 Vreg 0 tip42c
 Q8 N009 N006 N003 0 BC557B
 Q9 N006 N006 N002 0 BC557B
@@ -21,7 +21,7 @@ R11 N020 Vref 7.5k
 R12 0 N020 1k
 R13 N015 N021 1k
 R14 Vref-c N022 1k
-R15 N015 N016 1k
+R15 N015 N016 960
 R16 N014 Vf 4.3k
 R17 0 N014 4.3k
 R20 N013 Vref-c 2.2k
@@ -55,7 +55,7 @@ R27 N019 0 1.2k
 .lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.mos
 ;step param RE 1k 1.5k 100
 ;param RL=6
-* .tran 0.999999
+.tran 0.999999
 .include librerias/bd140.lib
 .include librerias/complex_discretes.lib
 * .op
@@ -75,7 +75,7 @@ R27 N019 0 1.2k
 * Mido regulacion de carga
 * -100*((V(vo)*I(RL))/(V(Vreg)*I(V1)))
 * Mido eficiencia
-.dc V1 2 10 0.1
+* .dc V1 2 10 0.1
 .lib librerias/tlv2731.lib
 .backanno
 .end

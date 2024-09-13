@@ -1,7 +1,7 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
 Circuit: * C:\Users\leone\Documents\repos\C2\reguladorA.asc
-Start Time: Fri Sep 13 00:45:29 2024
+Start Time: Fri Sep 13 01:03:55 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -38,16 +38,15 @@ Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to sk
 Starting Gmin stepping
 Gmin = 10
 vernier = 0.5
-Gmin = 1.86414
 vernier = 0.25
 vernier = 0.125
 vernier = 0.0625
+Gmin = 8.61953
 vernier = 0.03125
-Gmin = 2.01736
 vernier = 0.015625
 vernier = 0.0078125
-Gmin = 1.95549
 vernier = 0.00390625
+Gmin = 8.47038
 vernier = 0.00195312
 vernier = 0.000976562
 vernier = 0.000488281
@@ -57,17 +56,95 @@ Gmin stepping failed
 Starting source stepping with srcstepmethod=0
 Source Step = 3.0303%
 Source Step = 33.3333%
-Source Step = 63.6364%
-Source Step = 75%
-Source Step = 82.5758%
-Source Step = 90.1515%
-Source Step = 97.7273%
+Source Step = 36.2216%
+Source Step = 36.6951%
+Source Step = 37.1686%
+Source Step = 37.642%
+Source Step = 38.1155%
+Source Step = 38.589%
+vernier = 0.0234375
+Source Step = 39.2992%
+Source Step = 40.0095%
+Source Step = 40.7197%
+Source Step = 41.4299%
+Source Step = 42.1402%
+vernier = 0.0351562
+Source Step = 43.17%
+Source Step = 44.2353%
+Source Step = 45.3007%
+Source Step = 46.366%
+Source Step = 47.4313%
+vernier = 0.0527344
+Source Step = 48.9228%
+Source Step = 50.2412%
+Source Step = 50.391%
+Source Step = 50.4909%
+Source Step = 50.5907%
+Source Step = 50.6906%
+Source Step = 50.7905%
+vernier = 0.00494385
+Source Step = 50.9153%
+Source Step = 51.0652%
+Source Step = 51.215%
+Source Step = 51.3648%
+Source Step = 51.5146%
+vernier = 0.00741577
+Source Step = 51.6944%
+Source Step = 51.9191%
+Source Step = 52.1438%
+Source Step = 52.3685%
+Source Step = 52.5933%
+vernier = 0.0111237
+Source Step = 52.8517%
+Source Step = 53.1888%
+Source Step = 53.5258%
+Source Step = 53.8629%
+Source Step = 54.2%
+vernier = 0.0166855
+Source Step = 54.5708%
+Source Step = 55.0764%
+Source Step = 55.582%
+Source Step = 56.0877%
+Source Step = 56.5933%
+vernier = 0.0250282
+Source Step = 57.1242%
+Source Step = 57.8826%
+Source Step = 58.641%
+Source Step = 59.3995%
+Source Step = 60.1579%
+Source Step = 60.9163%
+vernier = 0.0375423
+Source Step = 62.054%
+Source Step = 63.1916%
+Source Step = 64.3293%
+Source Step = 65.4669%
+Source Step = 66.6046%
+vernier = 0.0563135
+Source Step = 68.2542%
+Source Step = 69.9606%
+Source Step = 71.6671%
+Source Step = 73.3736%
+Source Step = 75.08%
+vernier = 0.0844703
+Source Step = 77.4691%
+Source Step = 80.0288%
+Source Step = 82.5885%
+Source Step = 85.1482%
+Source Step = 87.7079%
+vernier = 0.126705
+Source Step = 90.2036%
+Source Step = 91.1635%
+Source Step = 92.1234%
+Source Step = 93.0833%
+Source Step = 94.0432%
+vernier = 0.0475145
+Source Step = 95.0511%
+Source Step = 96.4909%
+Source Step = 97.9307%
+Source Step = 99.3706%
 Source stepping succeeded in finding the operating point.
 
 
-vo1rl: v(vo)=4.97147 at 6.15
-vo2rl: v(vo)=4.97194 at 6.35
-reglin: ((vo2rl-vo1rl)/1.85)=0.000250662
 
-Total elapsed time: 0.716 seconds.
+Total elapsed time: 3.023 seconds.
 
