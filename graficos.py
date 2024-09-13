@@ -32,14 +32,14 @@ def graficar(data1, data2, color='b', xlabel='', ylabel='', title='', label='', 
 # Ruta del archivo .txt
 # regulacion de carga
 
-vo_5_B_txt = 'Vo5_B.txt'
-vo_3_3_B_txt = 'V03_3B.txt'
-irl_3_3_B_txt = 'I_RL_3_3_B.txt'
-irl_5_B_txt = 'I_RL_5_B.txt'
-eficiencia_3_3_B_txt = 'eficiencia3_3B.txt'
-eficiencia_5_B_txt = 'eficiencia5B.txt'
-regulacion_linea_3_3B_txt = 'regulacion_linea_3_3B.txt'
-regulacion_linea_5B_txt = 'regulacion_linea_5B.txt'
+vo_5_B_txt = 'Vo5_A.txt'
+vo_3_3_B_txt = 'Vo_3_3A.txt'
+irl_3_3_B_txt = 'I_RL_3_3_A.txt'
+irl_5_B_txt = 'I_RL_5_A.txt'
+eficiencia_3_3_B_txt = 'eficiencia3_3A.txt'
+eficiencia_5_B_txt = 'eficiencia5A.txt'
+regulacion_linea_3_3B_txt = 'regulacion_linea_3_3A.txt'
+regulacion_linea_5B_txt = 'regulacion_linea_5A.txt'
 ganancia_lazo_5B_txt = 'ganancia_de_lazo_5_B.txt'
 ganancia_lazo_3_3B_txt = 'ganancia_de_lazo_3_3_B.txt'
 a_modificado_3_3B_txt = 'a_modificado_3_3B.txt'
@@ -60,34 +60,34 @@ freq3, a_modificado_5B = leer_datos(a_modificado_5B_txt)
 freq4, a_modificado_3_3B = leer_datos(a_modificado_3_3B_txt)
 
 # Graficar los datos
-graficar(irl_5_B, Vo_5, 'b',
+graficar(irl_5_B, Vo_5, 'g',
          r'$I_RL$ [A]', r'V_o [V]',
-         'Limitador de corriente del regulador B a 5,5V',
+         'Limitador de corriente del regulador A a 5,5V',
          'Proteccion foldback a 5,5V')
 
-graficar(irl_3_3_B, Vo_3_3, 'b',
+graficar(irl_3_3_B, Vo_3_3, 'g',
          r'$I_{RL} [A]$', r'V_o [V]',
-         'Limitador de corriente del regulador B a 3,3V',
+         'Limitador de corriente del regulador A a 3,3V',
          'Proteccion foldback a 3,3V')
 
-graficar(vin1, eficiencia_3_3B, 'b',
+graficar(vin1, eficiencia_3_3B, 'g',
          r'$V_{in} [V]$', r'Eficiencia [/%]',
-         'Eficiencia del regulador B a 3,3V',
+         'Eficiencia del regulador A a 3,3V',
          'Eficiencia a 3,3V')
 
-graficar(vin2, eficiencia_5_B, 'b',
+graficar(vin2, eficiencia_5_B, 'g',
          r'$V_{in} [V]$', r'Eficiencia [/%]',
-         'Eficiencia del regulador B a 5V',
+         'Eficiencia del regulador A a 5V',
          'Eficiencia a 5V')
 
-graficar(vin3, regulacion_linea_3_3B, 'b',
+graficar(vin3, regulacion_linea_3_3B, 'g',
          r'$V_{in} [V]$', r'V_o [V]',
-         'Regulación de linea del regulador B a 3,3V',
+         'Regulación de linea del regulador A a 3,3V',
          'Regulación de linea')
 
 graficar(vin4, regulacion_linea_5B, 'b',
          r'$V_{in} [V]$', r'V_o [V]',
-         'Regulación de linea del regulador B 5V',
+         'Regulación de linea del regulador A 5V',
          'Regulación de linea')
 
 graficar(freq1, ganancia_lazo_5B, 'b',
@@ -108,4 +108,4 @@ graficar(freq3, a_modificado_5B, 'b',
 graficar(freq4, ganancia_lazo_3_3B, 'b',
          'Frecuencia [Hz]', 'a modificado [dB]',
          'Ganancia del amplificador modificado 3,3V regulador B',
-         'Ganancia del amlificador modificado',True)
+         'Ganancia del amplificador modificado', True)

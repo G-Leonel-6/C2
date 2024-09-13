@@ -1,12 +1,11 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
-Circuit: * C:\Users\leone\Documents\repos\C2\reguladorB.asc
-Start Time: Thu Sep 12 20:49:18 2024
+Circuit: * C:\Users\leone\Documents\repos\C2\reguladorA.asc
+Start Time: Thu Sep 12 21:01:08 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
 Warning: Multiple definitions of model "bc847b" Type: BJT
-r29: both pins shorted together -- ignoring.
 solver = Normal
 Maximum thread count: 16
 tnom = 27
@@ -16,40 +15,26 @@ Early termination of direct N-R iteration.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
-Gmin = 1.07374
 vernier = 0.5
 vernier = 0.25
 vernier = 0.125
 vernier = 0.0625
-Gmin = 1.1391
+Gmin = 8.61953
 vernier = 0.03125
 vernier = 0.015625
 vernier = 0.0078125
 vernier = 0.00390625
-Gmin = 1.12806
+Gmin = 8.47038
 vernier = 0.00195312
 vernier = 0.000976562
-Gmin = 1.12449
-vernier = 0.00130208
-vernier = 0.000651042
-vernier = 0.000488281
-vernier = 0.000651041
-Gmin = 1.12325
 vernier = 0.000488281
 Gmin = 0
-Gmin stepping failed
-
-Starting source stepping with srcstepmethod=0
-Source Step = 3.0303%
-Source Step = 33.3333%
-Source Step = 63.6364%
-Source Step = 93.9394%
-Source stepping succeeded in finding the operating point.
+Gmin stepping succeeded in finding the operating point.
 
 
-vo1rl: v(vo)=3.31548 at 6.15
-vo2rl: v(vo)=3.31575 at 6.35
-reglin: ((vo2rl-vo1rl)/1.85)=0.000144791
+vo1rl: v(vo)=3.32505 at 6.15
+vo2rl: v(vo)=3.32536 at 6.35
+reglin: ((vo2rl-vo1rl)/1.85)=0.000164895
 
-Total elapsed time: 1.370 seconds.
+Total elapsed time: 0.512 seconds.
 
