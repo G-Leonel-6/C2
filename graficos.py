@@ -44,6 +44,8 @@ ganancia_lazo_5B_txt = 'ganancia_de_lazo_5_B.txt'
 ganancia_lazo_3_3B_txt = 'ganancia_de_lazo_3_3_B.txt'
 a_modificado_3_3B_txt = 'a_modificado_3_3B.txt'
 a_modificado_5B_txt = 'a_modificado_5B.txt'
+ganancia_d = 'ganancia_d.txt'
+ganancia_c = 'ganancia_c.txt'
 
 # Leer los datos del archivo
 tiempo1, Vo_5 = leer_datos(vo_5_B_txt)
@@ -58,6 +60,8 @@ freq1, ganancia_lazo_5B = leer_datos(ganancia_lazo_5B_txt)
 freq2, ganancia_lazo_3_3B = leer_datos(ganancia_lazo_3_3B_txt)
 freq3, a_modificado_5B = leer_datos(a_modificado_5B_txt)
 freq4, a_modificado_3_3B = leer_datos(a_modificado_3_3B_txt)
+freq5, gd = leer_datos(ganancia_d)
+freq6, gc = leer_datos(ganancia_c)
 
 # Graficar los datos
 graficar(irl_5_B, Vo_5, 'g',
@@ -109,3 +113,14 @@ graficar(freq4, ganancia_lazo_3_3B, 'b',
          'Frecuencia [Hz]', 'a modificado [dB]',
          'Ganancia del amplificador modificado 3,3V regulador B',
          'Ganancia del amplificador modificado', True)
+
+
+graficar(freq5, gd, 'b',
+         'Frecuencia [Hz]', r'A$_{vd}$ [dB]',
+         'Ganancia diferencial del par diferencial',
+         'Ganancia diferencial', True)
+
+graficar(freq6, gc, 'b',
+         'Frecuencia [Hz]', r'A$_{vc}$ [dB]',
+         'Ganancia de modo comun del par diferencial',
+         'Ganancia de modo comun', True)
