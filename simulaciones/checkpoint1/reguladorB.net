@@ -1,0 +1,91 @@
+* C:\Users\leone\Documents\repos\C2\reguladorB.asc
+Q1 N006 Vref N010 0 TR1
+Q2 N009 Vf N010 0 TR1
+Q3 N007 N009 N001 0 2N2222
+Q5 N010 N021 N028 0 BC547B
+Q6 N021 N021 N027 0 BC547B
+R1 Vref N021 100
+R2 Vreg N003 0.1k
+R3 Vreg N002 0.1k
+RL Vo 0 1k
+Q7 N001 N007 Vreg 0 tip42C
+Q8 N009 N006 N003 0 BC557B
+Q9 N006 N006 N002 0 BC557B
+V1 Vreg 0 PWL(1m 0 1.1m 6.15 2m 6.15 2.1m 7.15)
+V2 Vref 0 PWL(1m 0 1.01m 1.2 3m 1.2 3.1m 1.3)
+R7 N001 N004 2.2k
+R8 Vo N008 2.2k
+R9 N004 0 22k
+R10 N008 Vs 22k
+R11 N022 Vref 2.2k
+R12 0 N022 910
+R13 N016 N023 1.1k
+R14 Vref-c N024 1k
+R15 N016 N017 1k
+R16 N014 Vf 1k
+R17 0 N014 11k
+R20 N013 Vref-c 2.2k
+R22 N012 N011 32k
+R23 N019 0 47
+R24 N024 0 1k
+R21 N012 N013 82k
+R200 Vs N005 2.2k
+R19 0 N005 82k
+R4 N001 Vo 0.1
+Q4 N009 N011 N019 0 2N2222
+XU6 N016 N024 5v 0 Vref-c LM324
+XU2 N004 N008 5v 0 Vs TLV2371
+XU1 N005 N013 5v 0 N012 LM324
+XU3 N014 N017 5v 0 N017 LM324
+XU4 N022 N023 5v 0 N023 LM324
+V3 5v 0 5
+R5 Vo Vf 3.3k
+R6 Vf N020 2.2k
+R26 Vf N020 2.4k
+M1 N020 N025 0 0 BSZ100N03LS
+R28 N026 N025 1k
+V4 N026 0 6
+R27 N020 N029 1.1k
+R29 N029 0 20
+R18 N027 0 10
+R25 N028 0 10
+C1 Vo 0 1µ
+V5 N018 0 PULSE(0.1 1 10m 1u 1u 2m 20m)
+S1 0 N015 N018 0 SW
+R30 Vo N015 3
+C2 N009 Vf 10n
+C3 N013 N012 220n
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.mos
+;step param RE 1k 1.5k 100
+;param RL=6
+.tran 0 30m 0 0.1u
+.include librerias/bd140.lib
+.include librerias/complex_discretes.lib
+* .op
+* REFERENCIA
+.inc opamp.sub
+.lib librerias/LM324.ti.lib
+* LIBRERIAS
+* SIMULACIONES
+.meas DC Vo1rl FIND V(Vo) AT=6.15
+.meas DC Vo2rl FIND V(Vo) AT=6.35
+.meas DC RegLin PARAM ((Vo2rl-Vo1rl)/1.85)
+* Mido regulacion de linea
+.meas OP Vo1rc FIND V(Vo) AT 100
+.meas OP Vo2rc FIND V(Vo) AT 5
+.meas OP Io1rc FIND I(RL) AT 100
+.meas OP Io2rc FIND I(RL) AT 5
+* Mido regulacion de carga
+* -100*((V(vo)*I(RL))/(V(Vreg)*I(V1)))
+* Mido eficiencia
+* .dc V1 2 10 0.1
+.param VINDC 6.25
+.lib librerias/tlv2731.lib
+.model SW SW(Ron=0.1 Roff=100Meg Vt=0.5 Vh=0.25)
+.backanno
+.end
