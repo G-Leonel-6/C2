@@ -1,0 +1,142 @@
+Stray ".ends" card: .ends
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint2\reguladorB.asc
+Start Time: Sat Sep 21 00:54:11 2024
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Instance "m:u2:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:8": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:5": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:19": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:23": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:53": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:41": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:42": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:43": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:44": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:49": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:50": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:45": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:46": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:48": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:51": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:52": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:54": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:55": Length shorter than recommended for a level 1 MOSFET.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 8.61953
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 8.47038
+vernier = 0.00195312
+vernier = 0.000976562
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 37.358%
+Source Step = 37.8314%
+Source Step = 38.3049%
+Source Step = 38.7784%
+Source Step = 39.2519%
+vernier = 0.0234375
+Source Step = 39.8201%
+Source Step = 40.5303%
+Source Step = 41.2405%
+Source Step = 41.9508%
+Source Step = 42.661%
+vernier = 0.0351562
+Source Step = 43.4777%
+Source Step = 44.5431%
+Source Step = 45.6084%
+Source Step = 46.6738%
+Source Step = 47.7391%
+vernier = 0.0527344
+Source Step = 48.911%
+Source Step = 50.2293%
+Source Step = 50.3792%
+Source Step = 50.479%
+Source Step = 50.5789%
+Source Step = 50.6788%
+Source Step = 50.7787%
+vernier = 0.00494385
+Source Step = 50.8885%
+Source Step = 51.0383%
+Source Step = 51.1882%
+Source Step = 51.338%
+Source Step = 51.4878%
+vernier = 0.00741577
+Source Step = 51.6451%
+Source Step = 51.8698%
+Source Step = 52.0945%
+Source Step = 52.3192%
+Source Step = 52.544%
+Source Step = 52.7687%
+vernier = 0.0111237
+Source Step = 53.1058%
+Source Step = 53.4428%
+Source Step = 53.7799%
+Source Step = 54.117%
+Source Step = 54.4541%
+vernier = 0.0166855
+Source Step = 54.9429%
+Source Step = 55.4485%
+Source Step = 55.9541%
+Source Step = 56.4597%
+Source Step = 56.9653%
+vernier = 0.0250282
+Source Step = 57.6732%
+Source Step = 58.4316%
+Source Step = 59.1901%
+Source Step = 59.9485%
+Source Step = 60.7069%
+vernier = 0.0375423
+Source Step = 61.7308%
+Source Step = 62.8685%
+Source Step = 64.0061%
+Source Step = 65.1438%
+Source Step = 66.2814%
+vernier = 0.0563135
+Source Step = 67.7603%
+Source Step = 69.4668%
+Source Step = 71.1733%
+Source Step = 72.8798%
+Source Step = 74.5862%
+vernier = 0.0844703
+Source Step = 76.7193%
+Source Step = 79.279%
+Source Step = 81.8387%
+Source Step = 84.3984%
+Source Step = 86.9581%
+vernier = 0.126705
+Source Step = 90.0298%
+Source Step = 93.8693%
+Source Step = 97.7089%
+Source stepping succeeded in finding the operating point.
+
+
+
+Total elapsed time: 50.232 seconds.
+
