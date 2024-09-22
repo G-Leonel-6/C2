@@ -1,7 +1,7 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
 Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint2\reguladorB.asc
-Start Time: Sat Sep 21 19:32:44 2024
+Start Time: Sat Sep 21 21:30:18 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -55,47 +55,49 @@ Gmin stepping failed
 
 Starting source stepping with srcstepmethod=0
 Source Step = 3.0303%
-Source Step = 18.9394%
-Source Step = 26.5152%
-Source Step = 34.0909%
-Source Step = 41.6667%
-Source Step = 49.2424%
-vernier = 0.375
-Source Step = 58.3333%
-Source Step = 69.697%
-Source Step = 81.0606%
-Source Step = 90.4356%
+Source Step = 33.3333%
+Source Step = 38.4943%
+Source Step = 38.9678%
+Source Step = 39.4413%
+Source Step = 39.9148%
+Source Step = 40.3883%
+Source Step = 40.8617%
 vernier = 0.0234375
-Source Step = 90.3113%
-Source Step = 90.4889%
-Source Step = 90.6664%
-Source Step = 90.844%
-Source Step = 91.0215%
-vernier = 0.00878906
-Source Step = 91.2701%
-Source Step = 91.5365%
-Source Step = 91.8028%
-Source Step = 92.0691%
-Source Step = 92.3355%
-vernier = 0.0131836
-Source Step = 92.695%
-Source Step = 93.0945%
-Source Step = 93.494%
-Source Step = 93.8935%
-Source Step = 94.293%
-vernier = 0.0197754
-Source Step = 94.8124%
-Source Step = 95.4116%
-Source Step = 96.0109%
-Source Step = 96.6101%
-Source Step = 97.2094%
-vernier = 0.0296631
-Source Step = 97.9585%
-Source Step = 98.8573%
-Source Step = 99.7562%
+Source Step = 41.572%
+Source Step = 42.2822%
+Source Step = 42.9924%
+Source Step = 43.7027%
+Source Step = 44.4129%
+vernier = 0.0351562
+Source Step = 45.4427%
+Source Step = 46.508%
+Source Step = 47.5734%
+Source Step = 48.6387%
+Source Step = 49.7041%
+vernier = 0.0527344
+Source Step = 51.1955%
+Source Step = 52.7936%
+Source Step = 54.3916%
+Source Step = 55.9896%
+Source Step = 57.5876%
+vernier = 0.0791016
+Source Step = 59.7449%
+Source Step = 62.1419%
+Source Step = 64.5389%
+Source Step = 66.936%
+Source Step = 69.333%
+vernier = 0.118652
+Source Step = 72.4491%
+Source Step = 76.0446%
+Source Step = 79.6402%
+Source Step = 83.2357%
+Source Step = 86.8312%
+vernier = 0.177979
+Source Step = 91.3256%
+Source Step = 96.7189%
 Source stepping succeeded in finding the operating point.
 
 
 
-Total elapsed time: 63.568 seconds.
+Total elapsed time: 1.897 seconds.
 
