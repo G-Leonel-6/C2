@@ -1,126 +1,77 @@
-import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# Función para leer los datos del archivo usando numpy.loadtxt
-def leer_datos(archivo):
-    # Utilizamos numpy.loadtxt para leer los datos, saltando la primera línea
-    data = np.loadtxt(archivo, delimiter='\t', skiprows=1)
+def graficar(x, y, xlabel='', ylabel='', title='', ruta_salida=''):
 
-    # Dividimos las dos columnas en data1 y data2
-    data1 = data[:, 0]  # Primera columna
-    data2 = data[:, 1]  # Segunda columna
+    plt.figure()
+    plt.grid()
+    # Asumiendo que el archivo tiene columnas llamadas 'dato1', 'dato2', etc.
+    plt.plot(x, y)
 
-    return data1, data2
-
-
-# Función para graficar los datos
-def graficar(data1, data2, color='b', xlabel='', ylabel='', title='', label='', semilogx=False):
-    plt.figure(figsize=(10, 6))
-    if semilogx:
-        plt.semilogx(data1, data2, linestyle='-', color=color, label=label)
-    else:
-        plt.plot(data1, data2, linestyle='-', color=color, label=label)
+    # Configuraciones del gráfico
+    plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
-    plt.title(title)
-    plt.legend()
-    plt.grid(True)
-    plt.savefig(title)
+
+    plt.savefig(ruta_salida)
 
 
-# Ruta del archivo .txt
-# regulacion de carga
+def graficar_subplots(x, y1, y2, xlabel='', ylabel1='', ylabel2='', ruta_salida=''):
+    fig, axs = plt.subplots(1, 2, sharex=True)
 
-vo_5_B_txt = 'Vo5_A.txt'
-vo_3_3_B_txt = 'Vo_3_3A.txt'
-irl_3_3_B_txt = 'I_RL_3_3_A.txt'
-irl_5_B_txt = 'I_RL_5_A.txt'
-eficiencia_3_3_B_txt = 'eficiencia3_3A.txt'
-eficiencia_5_B_txt = 'eficiencia5A.txt'
-regulacion_linea_3_3B_txt = 'regulacion_linea_3_3A.txt'
-regulacion_linea_5B_txt = 'regulacion_linea_5A.txt'
-ganancia_lazo_5B_txt = 'ganancia_de_lazo_5_B.txt'
-ganancia_lazo_3_3B_txt = 'ganancia_de_lazo_3_3_B.txt'
-a_modificado_3_3B_txt = 'a_modificado_3_3B.txt'
-a_modificado_5B_txt = 'a_modificado_5B.txt'
-ganancia_d = 'ganancia_d.txt'
-ganancia_c = 'ganancia_c.txt'
+    axs[0].grid()
+    axs[0].semilogx(x, y1, 'r')
+    axs[0].set_xlabel(xlabel)
+    axs[0].set_ylabel(ylabel1)
 
-# Leer los datos del archivo
-tiempo1, Vo_5 = leer_datos(vo_5_B_txt)
-tiempo2, Vo_3_3 = leer_datos(vo_3_3_B_txt)
-tiempo3, irl_5_B = leer_datos(irl_5_B_txt)
-tiempo4, irl_3_3_B = leer_datos(irl_3_3_B_txt)
-vin1, eficiencia_3_3B = leer_datos(eficiencia_3_3_B_txt)
-vin2, eficiencia_5_B = leer_datos(eficiencia_5_B_txt)
-vin3, regulacion_linea_3_3B = leer_datos(regulacion_linea_3_3B_txt)
-vin4, regulacion_linea_5B = leer_datos(regulacion_linea_5B_txt)
-freq1, ganancia_lazo_5B = leer_datos(ganancia_lazo_5B_txt)
-freq2, ganancia_lazo_3_3B = leer_datos(ganancia_lazo_3_3B_txt)
-freq3, a_modificado_5B = leer_datos(a_modificado_5B_txt)
-freq4, a_modificado_3_3B = leer_datos(a_modificado_3_3B_txt)
-freq5, gd = leer_datos(ganancia_d)
-freq6, gc = leer_datos(ganancia_c)
+    axs[1].grid()
+    axs[1].semilogy(x, y2, 'b')
+    axs[1].set_xlabel(xlabel)
+    axs[1].set_ylabel(ylabel2)
 
-# Graficar los datos
-graficar(irl_5_B, Vo_5, 'g',
-         r'$I_RL$ [A]', r'V_o [V]',
-         'Limitador de corriente del regulador A a 5,5V',
-         'Proteccion foldback a 5,5V')
-
-graficar(irl_3_3_B, Vo_3_3, 'g',
-         r'$I_{RL} [A]$', r'V_o [V]',
-         'Limitador de corriente del regulador A a 3,3V',
-         'Proteccion foldback a 3,3V')
-
-graficar(vin1, eficiencia_3_3B, 'g',
-         r'$V_{in} [V]$', r'Eficiencia [/%]',
-         'Eficiencia del regulador A a 3,3V',
-         'Eficiencia a 3,3V')
-
-graficar(vin2, eficiencia_5_B, 'g',
-         r'$V_{in} [V]$', r'Eficiencia [/%]',
-         'Eficiencia del regulador A a 5V',
-         'Eficiencia a 5V')
-
-graficar(vin3, regulacion_linea_3_3B, 'g',
-         r'$V_{in} [V]$', r'V_o [V]',
-         'Regulación de linea del regulador A a 3,3V',
-         'Regulación de linea')
-
-graficar(vin4, regulacion_linea_5B, 'b',
-         r'$V_{in} [V]$', r'V_o [V]',
-         'Regulación de linea del regulador A 5V',
-         'Regulación de linea')
-
-graficar(freq1, ganancia_lazo_5B, 'b',
-         'Frecuencia [Hz]', 'af [dB]',
-         'Ganancia de lazo a 5V regulador B',
-         'Ganancia de lazo ', True)
-
-graficar(freq2, ganancia_lazo_3_3B, 'b',
-         'Frecuencia [Hz]', 'af [dB]',
-         'Ganancia de lazo a 3,3V regulador B',
-         'Ganancia de lazo ', True)
-
-graficar(freq3, a_modificado_5B, 'b',
-         'Frecuencia [Hz]', 'a modificado [dB]',
-         'Ganancia de amplificador modificado a 5V regulador B',
-         'Ganancia del amplificador modificado', True)
-
-graficar(freq4, ganancia_lazo_3_3B, 'b',
-         'Frecuencia [Hz]', 'a modificado [dB]',
-         'Ganancia del amplificador modificado 3,3V regulador B',
-         'Ganancia del amplificador modificado', True)
+    fig.savefig(ruta_salida)
 
 
-graficar(freq5, gd, 'b',
-         'Frecuencia [Hz]', r'A$_{vd}$ [dB]',
-         'Ganancia diferencial del par diferencial',
-         'Ganancia diferencial', True)
+carpeta = 'trazas/checkpoint2'
+carpeta_salida = 'imagenes/checkpoint2'
 
-graficar(freq6, gc, 'b',
-         'Frecuencia [Hz]', r'A$_{vc}$ [dB]',
-         'Ganancia de modo comun del par diferencial',
-         'Ganancia de modo comun', True)
+# Cargar los datos desde un archivo de texto, saltando la primera línea
+nombres1 = ['time', 'potencia a 3,3']
+nombres2 = ['time', 'potencia a 5']
+nombres3 = ['freq', 'magnitud tension', 'fase tension']
+nombres4 = ['freq', 'magnitud corriente', 'fase corriente']
+nombres5 = ['time', 'respuesta transitoria V']
+nombres6 = ['time', 'corriente estabilizada']
+nombres7 = ['freq', 'magnitud V sin estabilizar', 'fase V sin estabilizar']
+nombres8 = ['freq', 'magnitud I sin estabilizar', 'fase I sin estabilizar']
+
+potencia_B_3_3 = f'{carpeta}/potencia_B_3_3.txt'  # Reemplaza con la ruta de tu archivo
+potencia_B_5 = f'{carpeta}/potencia_B_5.txt'
+lazo_estabilizado_B_corriente = f'{carpeta}/lazo_estabilizado_B_corriente.txt'
+lazo_estabilizado_B_tension = f'{carpeta}/lazo_estabilizado_B_5.txt'
+respuesta_transitoria = f'{carpeta}/respuesta_transitoria.txt'
+corriente_estabilizada = f'{carpeta}/corriente_estabilizada_B.txt'
+lazo_V_sin_estabilizar = f'{carpeta}/lazo_V_sin_estabilizar.txt'
+lazo_I_sin_estabilizar = f'{carpeta}/lazo_I_sin_estabilizar.txt'
+
+datos1 = pd.read_csv(potencia_B_3_3, sep='\t', skiprows=1, names=nombres1)
+datos2 = pd.read_csv(potencia_B_5, sep='\t', skiprows=1, names=nombres2)
+datos3 = pd.read_csv(lazo_estabilizado_B_tension, sep='\t', skiprows=1, names=nombres3)
+datos4 = pd.read_csv(lazo_estabilizado_B_corriente, sep='\t', skiprows=1, names=nombres4)
+datos5 = pd.read_csv(respuesta_transitoria, sep='\t', skiprows=1, names=nombres5)
+datos6 = pd.read_csv(corriente_estabilizada, sep='\t', skiprows=1, names=nombres6)
+datos7 = pd.read_csv(lazo_V_sin_estabilizar, sep='\t', skiprows=1, names=nombres7)
+datos8 = pd.read_csv(lazo_I_sin_estabilizar, sep='\t', skiprows=1, names=nombres8)
+
+graficar_subplots(datos3[nombres3[0]], datos3[nombres3[1]], datos3[nombres3[2]],'Hz', 'dB',
+                  'fase ', f'{carpeta_salida}/lazo_V_B_estabilizado.png')
+
+graficar_subplots(datos4[nombres4[0]], datos4[nombres4[1]], datos4[nombres4[2]],'Hz', 'dB',
+                  'fase ', f'{carpeta_salida}/lazo_I_B_estabilizado.png')
+
+graficar_subplots(datos7[nombres7[0]], datos7[nombres7[1]], datos7[nombres7[2]], 'Hz', 'dB',
+                  'fase ', f'{carpeta_salida}/lazo_V_B_sin_estabilizar.png')
+
+graficar_subplots(datos8[nombres8[0]], datos8[nombres8[1]], datos8[nombres8[2]], 'Hz', 'dB',
+                  'fase ', f'{carpeta_salida}/lazo_V_B_estabilizado.png')
