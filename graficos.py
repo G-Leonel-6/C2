@@ -55,7 +55,7 @@ potencia_B_5 = f'{carpeta}/potencia_B_5.txt'
 lazo_estabilizado_B_corriente = f'{carpeta}/lazo_estabilizado_B_corriente.txt'
 lazo_estabilizado_B_tension = f'{carpeta}/lazo_estabilizado_B_tension.txt'
 respuesta_transitoria = f'{carpeta}/respuesta_transitoria_B.txt'
-corriente_estabilizada = f'{carpeta}/corriente_estabilizada_B.txt'
+corriente_estabilizada = f'{carpeta}/corriente_transitoria.txt'
 lazo_V_sin_estabilizar = f'{carpeta}/lazo_V_sin_estabilizar.txt'
 lazo_I_sin_estabilizar = f'{carpeta}/lazo_I_sin_estabilizar.txt'
 
@@ -93,3 +93,15 @@ graficar_subplots(datos7[nombres7[0]], datos7[nombres7[1]], fase7_unwrap, 'Hz', 
 
 graficar_subplots(datos8[nombres8[0]], datos8[nombres8[1]], fase8_unwrap, 'Hz', 'dB',
                   'fase ', 'Lazo de corriente sin estabilizar', f'{carpeta_salida}/lazo_I_B_sin_estabilizar.png')
+
+graficar(datos1[nombres1[2]], datos1[nombres1[1]], 'Vo [V]', 'P [W]', 'Potencia disipada por transistor de paso',
+         f'{carpeta_salida}/potencia_B_3_3')
+
+graficar(datos2[nombres2[2]], datos2[nombres2[1]], 'Vo [V]', 'P [W]', 'Potencia disipada por transistor de paso',
+         f'{carpeta_salida}/potencia_B_5')
+
+graficar(10**3*datos5[nombres5[0]], datos5[nombres5[1]], 'Tiempo [ms]', 'Vo [V]', 'Respuesta transitoria de la tensión',
+         f'{carpeta_salida}/transitorio_tension')
+
+graficar(10**3*datos6[nombres6[0]], datos6[nombres6[1]], 'Tiempo [ms]', 'I [A]', 'Respuesta transitoria de la corriente',
+         f'{carpeta_salida}/transitorio_corriente')
