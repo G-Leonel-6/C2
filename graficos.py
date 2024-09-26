@@ -49,6 +49,7 @@ nombres5 = ['time', 'respuesta transitoria V']
 nombres6 = ['time', 'corriente estabilizada']
 nombres7 = ['freq', 'magnitud V sin estabilizar', 'fase V sin estabilizar']
 nombres8 = ['freq', 'magnitud I sin estabilizar', 'fase I sin estabilizar']
+nombres9 = ['time', 'tension inestable']
 
 potencia_B_3_3 = f'{carpeta}/potencia_B_3_3.txt'  # Reemplaza con la ruta de tu archivo
 potencia_B_5 = f'{carpeta}/potencia_B_5.txt'
@@ -58,6 +59,7 @@ respuesta_transitoria = f'{carpeta}/respuesta_transitoria_B.txt'
 corriente_estabilizada = f'{carpeta}/corriente_transitoria.txt'
 lazo_V_sin_estabilizar = f'{carpeta}/lazo_V_sin_estabilizar.txt'
 lazo_I_sin_estabilizar = f'{carpeta}/lazo_I_sin_estabilizar.txt'
+transtorio_inestable = f'{carpeta}/transitorio_inestable.txt'
 
 datos1 = pd.read_csv(potencia_B_3_3, sep='\t', skiprows=1, names=nombres1)
 datos2 = pd.read_csv(potencia_B_5, sep='\t', skiprows=1, names=nombres2)
@@ -67,7 +69,7 @@ datos5 = pd.read_csv(respuesta_transitoria, sep='\t', skiprows=1, names=nombres5
 datos6 = pd.read_csv(corriente_estabilizada, sep='\t', skiprows=1, names=nombres6)
 datos7 = pd.read_csv(lazo_V_sin_estabilizar, sep='\t', skiprows=1, names=nombres7)
 datos8 = pd.read_csv(lazo_I_sin_estabilizar, sep='\t', skiprows=1, names=nombres8)
-
+datos9 = pd.read_csv(transtorio_inestable, sep='\t', skiprows=1, names=nombres9)
 
 fase3_unwrap = np.unwrap(np.radians(datos3[nombres3[2]]))
 fase3_unwrap = np.degrees(fase3_unwrap)
@@ -105,3 +107,16 @@ graficar(10**3*datos5[nombres5[0]], datos5[nombres5[1]], 'Tiempo [ms]', 'Vo [V]'
 
 graficar(10**3*datos6[nombres6[0]], datos6[nombres6[1]], 'Tiempo [ms]', 'I [A]', 'Respuesta transitoria de la corriente',
          f'{carpeta_salida}/transitorio_corriente')
+
+plt.figure()
+plt.grid()
+# Asumiendo que el archivo tiene columnas llamadas 'dato1', 'dato2', etc.
+plt.plot(10**3*datos9[nombres9[0]], datos9[nombres9[1]])
+
+# Configuraciones del gráfico
+plt.title('Respuesta transitoria inestable')
+plt.xlabel('Tiempo [ms]')
+plt.ylabel('Vo [V]')
+plt.xlim([0, 5])
+
+plt.savefig(f'{carpeta_salida}/transitorio_inestable')
