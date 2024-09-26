@@ -1,7 +1,7 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
 Circuit: * F:\uni\DCE\C2\simulaciones\checkpoint2\reguladorA.asc
-Start Time: Tue Sep 24 23:08:00 2024
+Start Time: Tue Sep 24 23:23:29 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -130,5 +130,5 @@ Source stepping succeeded in finding the operating point.
 
 
 
-Total elapsed time: 2.192 seconds.
+Total elapsed time: 2.276 seconds.
 
