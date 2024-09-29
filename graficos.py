@@ -118,7 +118,7 @@ graficar_subplots(datos8[nombres8[0]], datos8[nombres8[1]], fase8_unwrap, 'Hz', 
                   'fase ', 'Lazo de corriente sin estabilizar', f'{carpeta_salida}/lazo_I_B_sin_estabilizar.png')
 
 graficar_subplots(datos10[nombres10[0]], datos10[nombres10[1]], fase10_unwrap, 'Hz', 'dB',
-                  'fase ', 'Lazo de corriente sin estabilizar', f'{carpeta_salida}/lazo_V_A_estabilizado.png')
+                  'fase ', 'Lazo de tensión sin estabilizar', f'{carpeta_salida}/lazo_V_A_estabilizado.png')
 
 graficar_subplots(datos11[nombres11[0]], datos11[nombres11[1]], fase11_unwrap, 'Hz', 'dB',
                   'fase ', 'Lazo de corriente sin estabilizar', f'{carpeta_salida}/lazo_I_A_estabilizado.png')
