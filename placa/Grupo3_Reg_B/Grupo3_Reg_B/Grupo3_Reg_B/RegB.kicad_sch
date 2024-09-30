@@ -3130,12 +3130,6 @@
 		(uuid "04e71e1c-1af8-4607-8362-e5b61a6d0772")
 	)
 	(junction
-		(at 173.99 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0783cf75-088c-4368-8f89-3d97b1da69c8")
-	)
-	(junction
 		(at 53.34 162.56)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3146,6 +3140,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "16a42f1f-c99e-406a-92e9-3785714065e2")
+	)
+	(junction
+		(at 173.99 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "29a7eed9-869f-4b8b-9d8f-0968c6bbb48d")
 	)
 	(junction
 		(at 102.87 153.67)
@@ -3765,6 +3765,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 123.19) (xy 173.99 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4818b5ac-0903-44a9-ab82-6e99b1244be8")
+	)
+	(wire
+		(pts
 			(xy 245.11 46.99) (xy 245.11 49.53)
 		)
 		(stroke
@@ -4002,16 +4012,6 @@
 			(type default)
 		)
 		(uuid "71481ef1-e56a-4f28-a6a0-631d511e9291")
-	)
-	(wire
-		(pts
-			(xy 173.99 132.08) (xy 196.85 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72f5703c-562e-4c6e-af98-3fa100cd3863")
 	)
 	(wire
 		(pts
@@ -4342,6 +4342,16 @@
 			(type default)
 		)
 		(uuid "a95bcd5c-c58b-48e5-9b67-12def57dde14")
+	)
+	(wire
+		(pts
+			(xy 173.99 132.08) (xy 196.85 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a961fa21-65fb-48b6-b112-af4949fd07d8")
 	)
 	(wire
 		(pts
@@ -4822,16 +4832,6 @@
 			(type default)
 		)
 		(uuid "f4952ce8-f2ab-49a6-8b8b-b2411ff88eec")
-	)
-	(wire
-		(pts
-			(xy 173.99 123.19) (xy 173.99 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7a16e78-c193-4ce9-b7ad-044daf4abda8")
 	)
 	(wire
 		(pts
@@ -5547,7 +5547,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1,1K"
+		(property "Value" "1,2K"
 			(at 176.53 120.6499 0)
 			(effects
 				(font
@@ -5819,7 +5819,7 @@
 			(uuid "81c68dd6-b1ba-4a1d-87d9-27fa9ce95f43")
 		)
 		(instances
-			(project ""
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "J2")
 					(unit 1)
@@ -6086,7 +6086,7 @@
 			)
 		)
 		(instances
-			(project "TP_FINAL_555"
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "H1")
 					(unit 1)
@@ -6321,7 +6321,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "3,3K"
+		(property "Value" "3,6K"
 			(at 199.39 85.0899 0)
 			(effects
 				(font
@@ -6945,7 +6945,7 @@
 			(uuid "355a9997-ec46-48c5-b127-04214d2aed2b")
 		)
 		(instances
-			(project ""
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "C5")
 					(unit 1)
@@ -7038,7 +7038,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "2,4k"
+		(property "Value" "2,7k"
 			(at 199.39 109.2199 0)
 			(effects
 				(font
@@ -7435,7 +7435,7 @@
 			(uuid "6b9ea463-8250-4b35-ac62-46460f3927cf")
 		)
 		(instances
-			(project ""
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "Q1")
 					(unit 2)
@@ -7853,7 +7853,7 @@
 			(uuid "6b9ea463-8250-4b35-ac62-46460f3927d0")
 		)
 		(instances
-			(project ""
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "Q1")
 					(unit 1)
@@ -9046,7 +9046,7 @@
 			)
 		)
 		(instances
-			(project "TP_FINAL_555"
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "H4")
 					(unit 1)
@@ -9116,79 +9116,9 @@
 			(uuid "02fa366f-d5d6-4aa8-ac05-6e25b7aa22f7")
 		)
 		(instances
-			(project ""
-				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 173.99 128.27 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cc08f724-af22-4b23-aec3-98132530fd8a")
-		(property "Reference" "R29"
-			(at 176.53 126.9999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "20"
-			(at 176.53 129.5399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 175.768 128.27 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 173.99 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 173.99 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c1d26b15-943d-4b42-8837-3670c9f21526")
-		)
-		(pin "1"
-			(uuid "27ab7982-118a-4b20-9833-00ff970c83da")
-		)
-		(instances
 			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
-					(reference "R29")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -9250,7 +9180,7 @@
 			)
 		)
 		(instances
-			(project "TP_FINAL_555"
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "H2")
 					(unit 1)
@@ -9614,7 +9544,7 @@
 			)
 		)
 		(instances
-			(project "TP_FINAL_555"
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "H3")
 					(unit 1)
@@ -10303,7 +10233,7 @@
 			(uuid "4ac668d3-46db-4d83-b3b2-75b645b07e9e")
 		)
 		(instances
-			(project ""
+			(project "RegB"
 				(path "/58bebdd7-4e1d-4e7a-a1f6-5bcd5ee394de"
 					(reference "Q5")
 					(unit 1)

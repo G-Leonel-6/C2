@@ -512,7 +512,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "RegB.emn",
-      "netlist": "",
+      "netlist": "RegB.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
