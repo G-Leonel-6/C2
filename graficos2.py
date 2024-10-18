@@ -113,7 +113,7 @@ plt.plot(df_excel_pot5['Vo'], df_excel_pot5['pot'], label='Potencia disipada en 
 plt.plot(df_txt_pot_5['vo'], df_txt_pot_5['pot'], label='Simulación')
 plt.title('Comparación simulación con mediciones a 5V')
 plt.xlabel('Vo [V]')
-plt.ylabel('Potencia disipada [V]')
+plt.ylabel('Potencia disipada [W]')
 plt.legend()
 plt.tight_layout()
 # pongan un nombre a la figura y subanla a overleaf
@@ -126,7 +126,7 @@ plt.plot(df_excel_pot3['Vo'], df_excel_pot3['pot'], label='Potencia disipada en 
 plt.plot(df_txt_pot_3_3['vo'], df_txt_pot_3_3['pot'], label='Simulación')
 plt.title('Comparación simulación con mediciones a 3,3V')
 plt.xlabel('Vo [V]')
-plt.ylabel('Potencia disipada [V]')
+plt.ylabel('Potencia disipada [W]')
 plt.legend()
 plt.tight_layout()
 # pongan un nombre a la figura y subanla a overleaf
