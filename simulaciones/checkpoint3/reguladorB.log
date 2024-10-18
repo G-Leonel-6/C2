@@ -1,7 +1,7 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
 Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint3\reguladorB.asc
-Start Time: Wed Oct 16 20:04:45 2024
+Start Time: Thu Oct 17 22:06:40 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -35,70 +35,90 @@ Gmin stepping failed
 Starting source stepping with srcstepmethod=0
 Source Step = 3.0303%
 Source Step = 33.3333%
-Source Step = 63.6364%
-Source Step = 85.0379%
-vernier = 0.015625
-Source Step = 84.8722%
-Source Step = 84.9018%
-Source Step = 84.9313%
-Source Step = 84.9609%
-Source Step = 84.9905%
+Source Step = 33.3481%
+Source Step = 33.3777%
+Source Step = 33.4073%
+Source Step = 33.4369%
+Source Step = 33.4665%
 vernier = 0.00146484
-Source Step = 85.029%
-Source Step = 85.0734%
-Source Step = 85.1178%
-Source Step = 85.1622%
-Source Step = 85.2066%
+Source Step = 33.502%
+Source Step = 33.5464%
+Source Step = 33.5908%
+Source Step = 33.6352%
+Source Step = 33.6796%
 vernier = 0.00219727
-Source Step = 85.262%
-Source Step = 85.3286%
-Source Step = 85.3952%
-Source Step = 85.4618%
-Source Step = 85.5284%
+Source Step = 33.7306%
+Source Step = 33.7972%
+Source Step = 33.8638%
+Source Step = 33.9304%
+Source Step = 33.997%
 vernier = 0.0032959
-Source Step = 85.6083%
-Source Step = 85.7082%
-Source Step = 85.808%
-Source Step = 85.9079%
-Source Step = 86.0078%
+Source Step = 34.0702%
+Source Step = 34.1701%
+Source Step = 34.2699%
+Source Step = 34.3698%
+Source Step = 34.4697%
 vernier = 0.00494385
-Source Step = 86.1226%
-Source Step = 86.2725%
-Source Step = 86.4223%
-Source Step = 86.5721%
-Source Step = 86.7219%
+Source Step = 34.5746%
+Source Step = 34.7244%
+Source Step = 34.8742%
+Source Step = 35.024%
+Source Step = 35.1738%
+Source Step = 35.3236%
 vernier = 0.00741577
-Source Step = 86.8867%
-Source Step = 87.1114%
-Source Step = 87.3361%
-Source Step = 87.5609%
-Source Step = 87.7856%
+Source Step = 35.5484%
+Source Step = 35.7731%
+Source Step = 35.9978%
+Source Step = 36.2225%
+Source Step = 36.4472%
 vernier = 0.0111237
-Source Step = 88.0215%
-Source Step = 88.3586%
-Source Step = 88.6957%
-Source Step = 89.0328%
-Source Step = 89.3698%
-Source Step = 89.7069%
+Source Step = 36.7731%
+Source Step = 37.1102%
+Source Step = 37.4472%
+Source Step = 37.7843%
+Source Step = 38.1214%
 vernier = 0.0166855
-Source Step = 90.2126%
-Source Step = 90.7182%
-Source Step = 91.2238%
-Source Step = 91.7294%
-Source Step = 92.235%
+Source Step = 38.5933%
+Source Step = 39.0989%
+Source Step = 39.6046%
+Source Step = 40.1102%
+Source Step = 40.6158%
 vernier = 0.0250282
-Source Step = 92.9682%
-Source Step = 93.7266%
-Source Step = 94.485%
-Source Step = 95.2435%
-Source Step = 96.0019%
+Source Step = 41.2984%
+Source Step = 42.0568%
+Source Step = 42.8152%
+Source Step = 43.5737%
+Source Step = 44.3321%
 vernier = 0.0375423
-Source Step = 97.0637%
-Source Step = 98.2014%
-Source Step = 99.339%
+Source Step = 45.3181%
+Source Step = 46.4557%
+Source Step = 47.5934%
+Source Step = 48.731%
+Source Step = 49.8687%
+vernier = 0.0563135
+Source Step = 51.2907%
+Source Step = 52.9972%
+Source Step = 54.7037%
+Source Step = 56.4101%
+Source Step = 58.1166%
+vernier = 0.0844703
+Source Step = 60.1644%
+Source Step = 62.7241%
+Source Step = 65.2838%
+Source Step = 67.8435%
+Source Step = 70.4032%
+vernier = 0.126705
+Source Step = 73.3468%
+Source Step = 77.1864%
+Source Step = 81.026%
+Source Step = 84.8655%
+Source Step = 88.7051%
+vernier = 0.190058
+Source Step = 92.9286%
+Source Step = 98.6879%
 Source stepping succeeded in finding the operating point.
 
 
 
-Total elapsed time: 2.453 seconds.
+Total elapsed time: 2.464 seconds.
 
