@@ -1070,6 +1070,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 137.16) (xy 173.99 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7631276f-1789-4234-bf52-8d679d459c63")
+	)
+	(wire
+		(pts
 			(xy 162.56 118.11) (xy 163.83 118.11)
 		)
 		(stroke
@@ -1147,16 +1157,6 @@
 			(type default)
 		)
 		(uuid "cede969a-0283-4e90-9a28-dc3c0f47374c")
-	)
-	(wire
-		(pts
-			(xy 173.99 137.16) (xy 165.1 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d49112da-824b-45fe-96c9-9c3faa022137")
 	)
 	(wire
 		(pts
@@ -1647,72 +1647,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 173.99 134.62 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1dfa6260-c5a0-4b4e-b75f-a3b6679b6329")
-		(property "Reference" "#PWR06"
-			(at 173.99 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 173.99 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 173.99 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 173.99 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 173.99 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6ba21337-9f56-4c28-9a8b-aa4d73ce35e6")
-		)
-		(instances
-			(project "modulador_triangular"
-				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Regulator_Linear:LM7806_TO220")
 		(at 90.17 132.08 0)
 		(mirror y)
@@ -1779,6 +1713,73 @@
 			(project "modulador_triangular"
 				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 173.99 139.7 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33a32544-7dbb-4844-ae11-cc2517f18d1f")
+		(property "Reference" "#PWR06"
+			(at 167.64 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 170.18 139.6999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 173.99 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 173.99 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 173.99 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "124767b5-adef-4dd6-9199-81232448d0fd")
+		)
+		(instances
+			(project "modulador_triangular"
+				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -1853,7 +1854,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Socket")
-		(at 179.07 134.62 0)
+		(at 179.07 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1862,15 +1863,6 @@
 		(fields_autoplaced yes)
 		(uuid "356284b1-e22c-4d67-aadd-091bc9d52e70")
 		(property "Reference" "J1"
-			(at 180.34 134.6199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "OUT"
 			(at 180.34 137.1599 0)
 			(effects
 				(font
@@ -1879,8 +1871,17 @@
 				(justify left)
 			)
 		)
+		(property "Value" "OUT"
+			(at 180.34 139.6999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal"
-			(at 179.07 134.62 0)
+			(at 179.07 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1889,7 +1890,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 134.62 0)
+			(at 179.07 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1898,7 +1899,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 179.07 134.62 0)
+			(at 179.07 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
