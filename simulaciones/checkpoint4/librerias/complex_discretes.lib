@@ -1,0 +1,554 @@
+.MODEL TR1 NPN
++     IS = 1.822E-14 
++     NF = 0.9932 
++     ISE = 2.894E-16 
++     NE = 1.4 
++     BF = 324.4 
++     IKF = 0.109 
++     VAF = 82 
++     NR = 0.9931 
++     ISC = 9.982E-12 
++     NC = 1.763 
++     BR = 8.29 
++     IKR = 0.09 
++     VAR = 17.9 
++     RB = 10 
++     IRB = 5E-06 
++     RBM = 5 
++     RE = 0.649 
++     RC = 0.7014 
++     CJE = 1.244E-11 
++     VJE = 0.7579 
++     MJE = 0.3656 
++     TF = 4.908E-10 
++     XTF = 9.51 
++     VTF = 2.927 
++     ITF = 0.3131 
++     PTF = 0 
++     CJC = 3.347E-12 
++     VJC = 0.5463 
++     MJC = 0.391 
++     XCJC = 0.6193 
++     TR = 9E-08 
++     CJS = 0 
++     VJS = 0.75 
++     MJS = 0.333 
++     XTB = 0 
++     XTI = 3 
++     EG = 1.11 
++     FC = 0.979
+
+
+.MODEL TIP42C       PNP(Is=66.19f Xti=3 Eg=1.11 Vaf=100 Bf=137.6 Ise=862.2f
++   Ne=1.481 Ikf=1.642 Nk=.5695 Xtb=2 Br=5.88 Isc=273.5f Nc=1.24
++   Ikr=3.555 Rc=79.39m Cjc=870.4p Mjc=.6481 Vjc=.75 Fc=.5
++   Cje=390.1p Mje=.4343 Vje=.75 Tr=235.4n Tf=23.21n Itf=71.33
++   Xtf=5.982 Vtf=10 Rb=.1)
+
+
+.SUBCKT OP295    1  2  99 50 20
+*
+* INPUT STAGE
+*
+I1   99   4    2E-6
+R1   1    6    5E3
+R2   2    5    5E3
+CIN  1    2    2E-12
+IOS  1    2    0.5E-9
+D1   5    3    DZ
+D2   6    3    DZ
+EOS  7    6    POLY(1) (31,39) 30E-6 0.024
+Q1   8    5    4   QP
+Q2   9    7    4   QP
+R3   8    50   25.8E3
+R4   9    50   25.8E3
+*
+* GAIN STAGE
+*
+R7   10   98   270E6
+G1   98   10   POLY(1) (9,8) -4.26712E-9 27.8E-6
+EREF 98   0    (39,0) 1
+R5   99   39   100E3
+R6   39   50   100E3
+*
+* COMMON MODE STAGE
+*
+ECM 30 98 POLY(2) (1,39) (2,39) 0 0.5 0.5
+R12 30 31 1E6
+R13 31 98 100
+*
+* OUTPUT STAGE
+*
+I2   18   50   1.59E-6
+V2   99   12   DC 2.2763
+Q4   10   14   50   QNA  1.0
+R11  14   50   33
+M3   15   10   13   13   MN  L=9E-6 W=102E-6 AD=15E-10 AS=15E-10
+M4   13   10   50   50   MN  L=9E-6 W=50E-6 AD=75E-11 AS=75E-11
+D8   10   22   DX
+V3   22   50   DC 6
+M2   20   10   14   14   MN  L=9E-6 W=2000E-6 AD=30E-9 AS=30E-9
+Q5   17   17   99   QPA  1.0
+Q6   18   17   99   QPA  4.0
+R8   18   99   2.2E6
+Q7   18   19   99   QPA  1.0
+R9   99   19   8
+C2   18   99   20E-12
+M6   15   12   17   99   MP  L=9E-6 W=27E-6 AD=405E-12 AS=405E-12
+M1   20   18   19   99   MP  L=9E-6 W=2000E-6 AD=30E-9 AS=30E-9
+D4   21   18   DX
+V4   99   21   DC 6
+R10  10   11   6E3
+C3   11   20   50E-12
+.MODEL QNA NPN(IS=1.19E-16 BF=253 NF=0.99 VAF=193 IKF=2.76E-3
++ ISE=2.57E-13 NE=5 BR=0.4 NR=0.988 VAR=15 IKR=1.465E-4
++ ISC=6.9E-16 NC=0.99 RB=2.0E3 IRB=7.73E-6 RBM=132.8 RE=4 RC=209
++ CJE=2.1E-13 VJE=0.573 MJE=0.364 FC=0.5 CJC=1.64E-13 VJC=0.534 MJC=0.5
++ CJS=1.37E-12 VJS=0.59 MJS=0.5 TF=0.43E-9 PTF=30)
+.MODEL QPA PNP(IS=5.21E-17 BF=131 NF=0.99 VAF=62 IKF=8.35E-4
++ ISE=1.09E-14 NE=2.61 BR=0.5 NR=0.984 VAR=15 IKR=3.96E-5
++ ISC=7.58E-16 NC=0.985 RB=1.52E3 IRB=1.67E-5 RBM=368.5 RE=6.31 RC=354.4
++ CJE=1.1E-13 VJE=0.745 MJE=0.33 FC=0.5 CJC=2.37E-13 VJC=0.762 MJC=0.4
++ CJS=7.11E-13 VJS=0.45 MJS=0.412 TF=1.0E-9 PTF=30) 
+.MODEL MN NMOS(LEVEL=3 VTO=1.3 RS=0.3 RD=0.3 
++ TOX=8.5E-8 LD=1.48E-6 NSUB=1.53E16 UO=650 DELTA=10 VMAX=2E5
++ XJ=1.75E-6 KAPPA=0.8 ETA=0.066 THETA=0.01 TPG=1 CJ=2.9E-4 PB=0.837
++ MJ=0.407 CJSW=0.5E-9 MJSW=0.33)
+.MODEL MP PMOS(LEVEL=3 VTO=-1.1 RS=0.7 RD=0.7 
++ TOX=9.5E-8 LD=1.4E-6 NSUB=2.4E15 UO=650 DELTA=5.6 VMAX=1E5
++ XJ=1.75E-6 KAPPA=1.7 ETA=0.71 THETA=5.9E-3 TPG=-1 CJ=1.55E-4 PB=0.56
++ MJ=0.442 CJSW=0.4E-9 MJSW=0.33)
+.MODEL DX D(IS=1E-15)
+.MODEL DZ D(IS=1E-15, BV=7)
+.MODEL QP PNP(BF=125)
+.ENDS
+
+
+.SUBCKT LM358       1   2  99  50  28
+*
+*Features:
+*Eliminates need for dual supplies
+*Large DC voltage gain =             100dB
+*High bandwidth =                     1MHz
+*Low input offset voltage =            2mV
+*Wide supply range =       +-1.5V to +-16V
+*
+*NOTE: Model is for single device only and simulated
+*      supply current is 1/2 of total device current.
+*      Output crossover distortion with dual supplies
+*      is not modeled.
+*
+****************INPUT STAGE**************
+*
+IOS 2 1 5N
+*^Input offset current
+R1 1 3 500K
+R2 3 2 500K
+I1 99 4 100U
+R3 5 50 517
+R4 6 50 517
+Q1 5 2 4 QX
+Q2 6 7 4 QX
+*Fp2=1.2 MHz
+C4 5 6 128.27P
+*
+***********COMMON MODE EFFECT***********
+*
+I2 99 50 75U
+*^Quiescent supply current
+EOS 7 1 POLY(1) 16 49 2E-3 1
+*Input offset voltage.^
+R8 99 49 60K
+R9 49 50 60K
+*
+*********OUTPUT VOLTAGE LIMITING********
+V2 99 8 1.63
+D1 9 8 DX
+D2 10 9 DX
+V3 10 50 .635
+*
+**************SECOND STAGE**************
+*
+EH 99 98 99 49 1
+G1 98 9 POLY(1) 5 6 0 9.8772E-4 0 .3459
+*Fp1=7.86 Hz
+R5 98 9 101.2433MEG
+C3 98 9 200P
+*
+***************POLE STAGE***************
+*
+*Fp=2 MHz
+G3 98 15 9 49 1E-6
+R12 98 15 1MEG
+C5 98 15 7.9577E-14
+*
+*********COMMON-MODE ZERO STAGE*********
+*
+*Fpcm=10 KHz
+G4 98 16 3 49 5.6234E-8               
+L2 98 17 15.9M
+R13 17 16 1K
+*
+**************OUTPUT STAGE**************
+*
+F6 50 99 POLY(1) V6 300U 1
+E1 99 23 99 15 1
+R16 24 23 17.5
+D5 26 24 DX
+V6 26 22 .63V
+R17 23 25 17.5
+D6 25 27 DX
+V7 22 27 .63V
+V5 22 21 0.27V
+D4 21 15 DX
+V4 20 22 0.27V
+D3 15 20 DX
+L3 22 28 500P
+RL3 22 28 100K
+*
+***************MODELS USED**************
+*
+.MODEL DX D(IS=1E-15)
+.MODEL QX PNP(BF=1.111E3)
+*
+.ENDS
+
+
+.SUBCKT MCP6001 1 2 3 4 5
+* Input Stage
+V10  3 10 -500M
+R10 10 11 6.90K 
+R11 10 12 6.90K 
+C11 11 12 0.2p
+C12 1  0 6.00P 
+E12 71 14 POLY(4) 20 0 21 0 26 0 27 0   1.00M 20.1 20.1 1 1
+G12 1 0 62 0 1m 
+M12 11 14 15 15 NMI L=2.00U W=42.0U
+M14 12  2 15 15 NMI L=2.00U W=42.0U
+G14 2 0 62 0 1m 
+C14  2  0 6.00P 
+I15 15  4 50.0U
+V16 16  4 -300M
+GD16 16 1 TABLE {V(16,1)} ((-100,-1p)(0,0)(1m,1n)(2m,1m)(3m,1)) 
+V13  3 13 -300M
+GD13 2 13 TABLE {V(2,13)} ((-100,-1p)(0,0)(1m,1n)(2m,1m)(3m,1)) 
+R70 1 0 20.6T  
+R71 2 0 20.6T 
+R72 1 2 20T 
+I80 1 2 0.5p
+*
+* Noise, PSRR, and CMRR
+I20 21 20 423U
+D20 20  0 DN1
+D21  0 21 DN1
+G26  0 26 POLY(1) 3 4   110U -49U
+R26 26  0 1
+G27  0 27 POLY(2) 1 0 2 0   -440U 39.7U 39.7U
+R27 27  0 1
+*
+* Open Loop Gain, Slew Rate
+G30  0 30 POLY(1) 12 11   0 1
+R30 30  0 1K
+G31  0 31 POLY(1) 3 4 86 5.25
+R31 31  0 1 TC=2.8m
+GD31 30 31 TABLE {V(30,31)} ((-11,-1)(-10,-10n)(0,0)(1m,1000))
+G32 32  0 POLY(1) 3 4 113.7 3.5
+R32 32  0 1 TC=2.65m
+GD32 30 32 TABLE {V(30,32)} ((-1m,-1000)(0,0)(10,10n)(11,1))
+G33 0 33 30 0 1m
+R33 33 0 1k
+G34  0 34 33 0 425M
+R34  34 0 1K
+C34  34 0 74U
+G37  0 37 34 0 1m
+R37  37 0 1K
+C37  37 0 41.6P 
+G38  0 38 37 0 1m
+R38  39 0 1K
+L38  38 39 100U
+E38  35 0 38 0 1
+G35 33 0 TABLE {V(35,3)} ((-1,-1n)(0,0)(16,1n)(16.1,1))
+G36 33 0 TABLE {V(35,4)} ((-16.1,-1)(-16,-1n)(0,0)(1,1n))
+*
+* Output Stage 
+R80 50 0 100MEG
+G50 0 50 57 96 2
+R58 57  96 0.50
+R57 57  0 750
+C58  5  0 2.00P
+G57  0 57 POLY(3) 3 0 4 0 35 0   0 0.67M 0.67M 1.5M
+GD55 55 57 TABLE {V(55,57)} ((-2m,-1)(-1m,-1m)(0,0)(10,1n))
+GD56 57 56 TABLE {V(57,56)} ((-2m,-1)(-1m,-1m)(0,0)(10,1n))
+E55 55  0 POLY(2) 3 0 51 0 -0.7m 1 -40.0M
+E56 56  0 POLY(2) 4 0 52 0 1.2m 1 -37.0M
+R51 51 0 1k
+R52 52 0 1k
+GD51 50 51 TABLE {V(50,51)} ((-10,-1n)(0,0)(1m,1m)(2m,1))
+GD52 50 52 TABLE {V(50,52)} ((-2m,-1)(-1m,-1m)(0,0)(10,1n)) 
+G53  3  0 POLY(1) 51 0  -49U 1M
+G54  0  4 POLY(1) 52 0  -49U -1M
+*
+* Current Limit 
+G99 96 5 99 0 1 
+R98 0 98 1 TC=-2.8M,2.63U 
+G97 0 98 TABLE { V(96,5) } ((-11.0,-10.0M)(-1.00M,-9.9M)(0,0)(1.00M,9.9M)(11.0,10.0M)) 
+E97 99 0 VALUE { V(98)*((V(3)-V(4))*359M + 310M)} 
+D98 4 5 DESD 
+D99 5 3 DESD 
+*
+* Temperature / Voltage Sensitive IQuiscent
+R61 0 61 100 TC 3.11M 4.51U
+G61 3 4 61 0 1
+G60 0 61 TABLE {V(3, 4)} 
++ ((0,0)(900M,0.0106U)(1.00,0.20U)(1.3,0.63U)
++ (1.5,0.66U)(1.6,1.06U)(5.5,1.10U))
+*
+* Temp Sensitive offset voltage 
+I73 0 70 DC 1uA 
+R74 0 70 1 TC=2 
+E75 1 71 70 0 1 
+*
+* Temp Sensistive IBias 
+I62 0 62 DC 1uA 
+R62 0 62 REXP 58.2u 
+* Voltage on R62 used for G12, G14 in input stage
+*
+* Models
+.MODEL NMI NMOS
+.MODEL DESD  D   N=1 IS=1.00E-15 
+.MODEL DL  D   N=1 IS=1F 
+.MODEL DN1 D   IS=1P KF=146E-18 AF=1
+.MODEL REXP RES TCE=10.1 
+.ENDS MCP6001
+
+
+.subckt TLV247xA 1 2 3 4 5
+*
+  c1   11 12 1.1094E-12
+  c2    6  7 5.5000E-12
+  css  10 99 556.53E-15
+
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 39.614E6 -1E3 1E3 40E6 -40E6
+  ga    6  0 11 12 79.828E-6
+  gcm   0  6 10 99 32.483E-9
+  iss  10  4 dc 10.714E-6
+  hlim 90  0 vlim 1K
+  ioff 0 6 dc 75E-9
+  j1   11  2 10 jx1
+  j2   12  1 10 jx2
+  r2    6  9 100.00E3
+  rd1   3 11 12.527E3
+  rd2   3 12 12.527E3
+  ro1   8  5 10
+  ro2   7 99 10
+  rp    3  4 3.8023E3
+  rss  10 99 18.667E6
+  vb    9  0 dc 0
+  vc    3 53 dc .842
+  ve   54  4 dc .842
+  vlim  7  8 dc 0
+  vlp  91  0 dc 110
+  vln   0 92 dc 110
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.model jx1 NJF(Is=1.0825E-12 Beta=594.78E-6 Vto=-1)
+.model jx2 NJF(Is=1.0825E-12 Beta=594.78E-6 Vto=-1)
+.ends
+
+* MCP6001gpt Simplified Model
+.SUBCKT MCP6001gpt 1 2 3 4 5
+* Pin 1: Non-Inverting Input
+* Pin 2: Inverting Input
+* Pin 3: Output
+* Pin 4: V+ (Positive Supply)
+* Pin 5: V- (Negative Supply)
+
+* Input Stage
+Einput 1 0 2 0 100k  ; Voltage-controlled voltage source
+Rin 1 2 10k           ; Input resistance
+C1 1 0 10p            ; Input capacitance
+
+* Output Stage
+Rout 3 0 1k           ; Output load
+G1 2 0 3 0 1m         ; Voltage-controlled current source for feedback
+Cout 3 0 10p          ; Output capacitance
+
+* Power Supply
+Vplus 4 0 DC 5        ; Positive supply
+Vminus 5 0 DC -5      ; Negative supply (adjusted to be negative)
+
+.ENDS MCP6001gpt
+
+
+.SUBCKT ADTL082         1   2   99  50  30
+*
+* INPUT STAGE
+*
+R3   5  50  6.437E+03
+R4   6  50  6.437E+03
+CIN  1   2    5.5E-12
+I1   99  4    9.321E-04
+IOS  1   2    1.00E-12
+EOS  60  1    POLY(2)  (17,24) (73,24)  2.00E-03  1 1 
+EN   7  60 POLY(1) (81, 98) 0 1
+J1   5   2    4   JX
+J2   6   7    4   JX
+GB1  2  50    POLY(3) (4,2) (5,2) (50,2) 0 1E-12 1E-12 1E-12
+GB2  7  50    POLY(3) (4,7) (6,7) (50,7) 0 1E-12 1E-12 1E-12
+*
+EREFNEG 1000 0 24 0 -1
+EREF 98 0 POLY(2) (99,0) (50,0) 0 .5 .5 
+*
+* VOLTAGE NOISE GENERATOR
+*
+VN1  80 98 0
+RN1 80 98 17.1E-3
+HN  81 98 VN1 1.6E1
+RN2 81 98 1
+
+* Flicker noise
+*
+*D10 69 98 DNOISE
+*VSN 69 98 DC .6551
+*H1 70 98 VSN 8.22E+01
+*RN 70 98 1
+
+
+** SECOND STAGE & POLE AT 1.3 kHZ
+*
+R5   9  98    1.48E+05
+C3   9  98    39000E-12
+G1   98  9    5  6  1.30E-01
+V2   99  8    0.7
+V3   10 1000    -10.2
+
+D1   9   8    DX
+D2   10  9    DX
+*
+* COMMON-MODE GAIN NETWORK
+*
+E3   16 98     POLY(2) (1,98)  (2,98)  0  2.623E-03   2.623E-03
+R11  16 17     1.326E+06
+R12  17 98     3.183E+03
+C8   16 17     100E-12
+*E3   16 98     POLY(2) (1,98)  (2,98)  0  1.0E-02 1.0E-02
+*R11  16 17     3.27E+02
+*R12  17 98     1.59E-1
+*C8   16 17     50E-8
+*
+* PSRR NETWORK
+*
+EPSY 98 72 POLY(1) (99,50) 0 30.00E-02
+CPS3 72 73 300E-12
+RPS3 72 73 20.0E+05
+RPS4 73 98 1.96E+02;  was 1.96E+02
+*
+* POLE AT 15 MHZ
+*
+R13  18 98     1E3
+C9   18 98   1.48E-11
+G5   98 18     9  24  1E-3
+*
+
+*
+* OUTPUT STAGE
+*
+R14  24 99     500E3
+R15  24 50     500E3
+CF   24  0     1E-6
+GSY  99 50     POLY(1) 99 50 .0002 1.0E-6
+R16  29 99     8.00E+01
+R17  29 50     8.00E+01
+L1   29 30     1E-8
+G6   27 50     18 29  1.25E-02
+G7   28 50     29 18  1.25E-02
+G8   29 99     99 18  1.25E-02
+G9   50 29     18 50  1.25E-02
+V4   25 29     0.675
+V5   29 26     0.675
+D3   18 25     DX
+D4   26 18     DX
+D5   99 27     DX
+D6   99 28     DX
+D7   50 27     DY
+D8   50 28     DY
+F1   29  0     V4  1
+F2   0  29     V5  1
+*
+* MODELS USED
+*
+.MODEL JX PJF(BETA=1.4E-3  VTO=-1.000  IS=20E-12 RD=0
++ RS=0 CGD=1E-12 CGS=1E-12)
+.MODEL DX   D(IS=1E-12 RS=0 CJO=1E-12)
+.MODEL DY   D(IS=1E-12 BV=50 RS=10 CJO=1E-12)
+.MODEL DEN  D(IS=1E-12 RS=200 KF=2.651E-15 AF=6.8E-14)
+.MODEL DIN  D(IS=1E-12 RS=12090 KF=0 AF=1)
+.MODEL DNOISE D(IS=1E-14,RS=0,KF=1.6E-16)
+*
+*
+.ENDS ADTL082
+
+
+.SUBCKT irf5nj540 1 2 3
+**************************************
+* Model Generated by MODPEX *
+*Copyright(c) Symmetry Design Systems*
+* All Rights Reserved *
+* UNPUBLISHED LICENSED SOFTWARE *
+* Contains Proprietary Information *
+* Which is The Property of *
+* SYMMETRY OR ITS LICENSORS *
+*Commercial Use or Resale Restricted *
+* by Symmetry License Agreement *
+**************************************
+* Model generated on Nov 26, 01
+* MODEL FORMAT: SPICE3
+* Symmetry POWER MOS Model (Version 1.0)
+* External Node Designations
+* Node 1 -> Drain
+* Node 2 -> Gate
+* Node 3 -> Source
+M1 9 7 8 8 MM L=100u W=100u
+.MODEL MM NMOS LEVEL=1 IS=1e-32
++VTO=4.30281 LAMBDA=0.358584 KP=38.2823
++CGSO=1.31227e-05 CGDO=7.02817e-07
+RS 8 3 0.0398646
+D1 3 1 MD
+.MODEL MD D IS=8.24365e-12 RS=0.00750597 N=1.11224 BV=100
++IBV=0.00025 EG=1.2 XTI=4 TT=0
++CJO=9.16368e-10 VJ=0.748335 M=0.467972 FC=0.5
+RDS 3 1 1e+06
+RD 9 1 0.0001
+RG 2 7 4.87532
+D2 4 5 MD1
+* Default values used in MD1:
+* RS=0 EG=1.11 XTI=3.0 TT=0
+* BV=infinite IBV=1mA
+.MODEL MD1 D IS=1e-32 N=50
++CJO=2.4738e-09 VJ=0.5 M=0.782135 FC=1e-08
+D3 0 5 MD2
+* Default values used in MD2:
+* EG=1.11 XTI=3.0 TT=0 CJO=0
+* BV=infinite IBV=1mA
+.MODEL MD2 D IS=1e-10 N=0.4 RS=3e-06
+RL 5 10 1
+FI2 7 9 VFI2 -1
+VFI2 4 0 0
+EV16 10 0 9 7 1
+CAP 11 10 4.837e-09
+FI1 7 9 VFI1 -1
+VFI1 11 6 0
+RCAP 6 10 1
+D4 0 6 MD3
+* Default values used in MD3:
+* EG=1.11 XTI=3.0 TT=0 CJO=0
+* RS=0 BV=infinite IBV=1mA
+.MODEL MD3 D IS=1e-10 N=0.4
+.ENDS irf5nj540
+
