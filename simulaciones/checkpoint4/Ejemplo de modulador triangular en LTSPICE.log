@@ -1,0 +1,11 @@
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint4\Ejemplo de modulador triangular en LTSPICE.asc
+Start Time: Sun Nov  3 17:33:28 2024
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.537 seconds.
+
