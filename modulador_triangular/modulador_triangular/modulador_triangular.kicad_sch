@@ -975,12 +975,6 @@
 		)
 	)
 	(junction
-		(at 125.73 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c2d0076-9861-4b2c-beb1-2c17699c8a58")
-	)
-	(junction
 		(at 74.93 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -996,7 +990,13 @@
 		(at 133.35 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5a19b35d-6e9c-47da-9b20-104a50284f85")
+		(uuid "ba6166b3-1821-4597-aa97-8a7deed4b99f")
+	)
+	(junction
+		(at 125.73 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bad24d1c-0fc4-43b9-ba45-6c0cc14d61dc")
 	)
 	(wire
 		(pts
@@ -1274,6 +1274,28 @@
 			)
 		)
 	)
+	(global_label "Vcc"
+		(shape input)
+		(at 101.6 157.48 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2dffa784-36da-4169-a5d9-86e53eb59931")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 107.851 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "Va"
 		(shape input)
 		(at 118.11 139.7 180)
@@ -1485,6 +1507,28 @@
 		(uuid "d098506a-1ffb-4358-b288-d4a2bcfc6d3b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 107.8072 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Vcc"
+		(shape input)
+		(at 93.98 157.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5420505-a251-4f19-8c70-d41283d85345")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 87.729 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,6 +2054,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 129.54 139.7 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77aeead8-7af2-4589-950e-f1b4592f9ea4")
+		(property "Reference" "R1"
+			(at 129.54 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22K"
+			(at 129.54 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 129.54 137.922 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 129.54 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "77aca324-ea5c-45ee-9865-7db3f334a960")
+		)
+		(pin "1"
+			(uuid "9376a39a-e3c2-4299-a579-c86a5af92fd5")
+		)
+		(instances
+			(project "modulador_triangular"
+				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 152.4 142.24 0)
 		(unit 1)
@@ -2070,74 +2182,6 @@
 			(project "modulador_triangular"
 				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
 					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 129.54 139.7 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7c22d52a-c3e8-4782-a411-b4eb8c4c4944")
-		(property "Reference" "R4"
-			(at 129.54 133.35 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22K"
-			(at 129.54 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
-			(at 129.54 137.922 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 129.54 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 129.54 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f7a3517b-8335-4a0a-b408-1e99250418a1")
-		)
-		(pin "1"
-			(uuid "00dd6963-41cd-49d0-a1b1-d76c3a50b713")
-		)
-		(instances
-			(project "modulador_triangular"
-				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
-					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -2991,6 +3035,74 @@
 			(project "modulador_triangular"
 				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
 					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 97.79 157.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fcba9519-2c2f-4abd-80b6-adb53976c42f")
+		(property "Reference" "R0"
+			(at 97.79 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 97.79 153.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 97.79 159.258 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 97.79 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 97.79 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c7686d93-5c34-47eb-ae64-dabce696066c")
+		)
+		(pin "1"
+			(uuid "624763a9-16b1-49a5-802d-8c528db4e116")
+		)
+		(instances
+			(project "modulador_triangular"
+				(path "/2b400cfa-efc2-4e32-b6b6-fe8ff679fa68"
+					(reference "R0")
 					(unit 1)
 				)
 			)
