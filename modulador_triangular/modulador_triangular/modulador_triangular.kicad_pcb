@@ -96,6 +96,7 @@
 	(net 14 "unconnected-(U4-Pin_3-Pad3)")
 	(net 15 "Net-(J1-Pin_2)")
 	(net 16 "unconnected-(U3-Pin_8-Pad8)")
+	(net 17 "Net-(U1-VO)")
 	(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "000f8e72-2108-431a-9b3f-d4253805ad7a")
@@ -103,7 +104,7 @@
 		(descr "Terminal Block Phoenix MKDS-3-2-5.08, 2 pins, pitch 5.08mm, size 10.2x11.2mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/2138224.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
 		(tags "THT Terminal Block Phoenix MKDS-3-2-5.08 pitch 5.08mm size 10.2x11.2mm^2 drill 1.3mm pad 2.6mm")
 		(property "Reference" "J2"
-			(at 2.54 -6.96 360)
+			(at 2.54 -6.96 0)
 			(layer "F.SilkS")
 			(uuid "dc46c5ab-56d6-4388-b953-7a4655bc911a")
 			(effects
@@ -114,7 +115,7 @@
 			)
 		)
 		(property "Value" "V1_12"
-			(at 2.54 6.36 360)
+			(at 2.54 6.36 0)
 			(layer "F.Fab")
 			(uuid "233e7b0d-193a-40e7-8996-70bfc6a15ac6")
 			(effects
@@ -165,7 +166,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/88f5548f-be0b-4e42-ad3f-c2a187fe4a5f")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -543,7 +544,7 @@
 			(uuid "c93668a2-971c-4761-9a8f-0e09e08a3ea3")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.54 3.1 360)
+			(at 2.54 3.1 0)
 			(layer "F.Fab")
 			(uuid "433777e7-3500-4f36-b1ae-cc487f781f71")
 			(effects
@@ -656,7 +657,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/d3b5f275-cad9-404c-b9ed-b12144e68c4e")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -990,7 +991,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/356284b1-e22c-4d67-aadd-091bc9d52e70")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1419,7 +1420,7 @@
 		(descr "8-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
 		(property "Reference" "U4"
-			(at 3.81 -2.33 360)
+			(at 3.81 -2.33 0)
 			(layer "F.SilkS")
 			(uuid "329ea36f-6f99-402f-88ec-2e31a0c5b66f")
 			(effects
@@ -1430,7 +1431,7 @@
 			)
 		)
 		(property "Value" "ADTL082"
-			(at 3.81 9.95 360)
+			(at 3.81 9.95 0)
 			(layer "F.Fab")
 			(uuid "a7527e0d-c3dd-479b-a436-054e1be4af0e")
 			(effects
@@ -1481,7 +1482,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/191881c9-ae58-47e6-9102-50c0df0fa48b")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1636,7 +1637,7 @@
 			(uuid "d476a911-9104-4f53-ada0-5824e322e5fc")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 3.81 360)
+			(at 3.81 3.81 0)
 			(layer "F.Fab")
 			(uuid "5a701fd0-44ec-41e9-8f11-3237d7dddfa8")
 			(effects
@@ -1696,7 +1697,7 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 6 "Net-(U4-Pin_5)")
+			(net 17 "Net-(U1-VO)")
 			(pinfunction "Pin_5")
 			(pintype "passive")
 			(uuid "06963a94-d807-4544-a049-07a7ea55c52c")
@@ -1815,7 +1816,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/a677c3b1-2ce9-4843-84c2-f2ec4d5acb07")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2089,7 +2090,6 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/1cd1d098-8a0f-4012-af51-97ae421be3d6")
 		(sheetname "Raíz")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
@@ -2303,7 +2303,7 @@
 		(descr "8-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
 		(property "Reference" "U3"
-			(at 3.81 -2.33 360)
+			(at 3.81 -2.33 0)
 			(layer "F.SilkS")
 			(uuid "020c98b9-7fe4-4b3a-bd02-12d7be70d126")
 			(effects
@@ -2314,7 +2314,7 @@
 			)
 		)
 		(property "Value" "LT1016"
-			(at 3.81 9.95 360)
+			(at 3.81 9.95 0)
 			(layer "F.Fab")
 			(uuid "d94e33bf-16a2-4ebd-9e2b-3445876b5cc8")
 			(effects
@@ -2365,7 +2365,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/f174fb80-2cb1-42df-b3b4-c3a6cedac132")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2520,7 +2520,7 @@
 			(uuid "0718cfa2-7617-4621-a42e-590e6e52131a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 3.81 360)
+			(at 3.81 3.81 0)
 			(layer "F.Fab")
 			(uuid "44b824a4-e7a6-4165-b7a4-a9cd9e3c34e9")
 			(effects
@@ -2699,7 +2699,7 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/f063f622-3939-4715-b69f-38503e087172")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2954,7 +2954,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/d7525a63-2794-4dee-b670-14c17e4e6f90")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3160,6 +3160,311 @@
 			)
 		)
 	)
+	(footprint "Package_TO_SOT_THT:TO-220-3_Vertical"
+		(layer "F.Cu")
+		(uuid "ba49b35c-320b-4ff6-95f0-9f90356f282f")
+		(at 157.25 79.17 -90)
+		(descr "TO-220-3, Vertical, RM 2.54mm, see https://www.vishay.com/docs/66542/to-220-1.pdf")
+		(tags "TO-220-3 Vertical RM 2.54mm")
+		(property "Reference" "U1"
+			(at 2.54 -4.27 90)
+			(layer "F.SilkS")
+			(uuid "50e0e9e4-d258-4b66-8f6a-74340ebd86c7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "LM7806_TO220"
+			(at 2.54 2.5 90)
+			(layer "F.Fab")
+			(uuid "48b1097a-5b6c-4e80-aece-fff906bd73a9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5208cfe-903e-4ee2-bfc1-c28f2346965c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f6ec4300-7c04-4377-a29d-0f68631d9bfa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Positive 1A 35V Linear Regulator, Fixed Output 6V, TO-220"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ce3d78dc-e6c9-4007-a8ae-f0487eadb823")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property ki_fp_filters "TO?220*")
+		(path "/3154c472-9c3a-44df-9a68-05dc9b67133a")
+		(sheetname "Root")
+		(sheetfile "modulador_triangular.kicad_sch")
+		(attr through_hole)
+		(fp_line
+			(start -2.58 1.371)
+			(end 7.66 1.371)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ff199195-d47d-472b-a259-7b6e0a9d346a")
+		)
+		(fp_line
+			(start -2.58 -1.76)
+			(end 7.66 -1.76)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e1864385-7386-43c9-801c-91bc6bc2ccf0")
+		)
+		(fp_line
+			(start -2.58 -3.27)
+			(end -2.58 1.371)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "05354e68-1f6d-4005-bd3f-74998d6fc763")
+		)
+		(fp_line
+			(start -2.58 -3.27)
+			(end 7.66 -3.27)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "dc34857d-4c31-4d24-9ebf-3808b3a2a93f")
+		)
+		(fp_line
+			(start 0.69 -3.27)
+			(end 0.69 -1.76)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "30e18dd8-cc8f-46ad-97c6-09d85ddfeb66")
+		)
+		(fp_line
+			(start 4.391 -3.27)
+			(end 4.391 -1.76)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7bc33d3e-4e3a-42c1-a017-f6953ac30c87")
+		)
+		(fp_line
+			(start 7.66 -3.27)
+			(end 7.66 1.371)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "936af8c7-1b94-44c3-b3a6-e848ca46d54c")
+		)
+		(fp_line
+			(start -2.71 1.51)
+			(end 7.79 1.51)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "2462831a-2242-4613-8f70-cfaa00e4a05a")
+		)
+		(fp_line
+			(start 7.79 1.51)
+			(end 7.79 -3.4)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "248634e7-733d-4899-9683-834a8d8d85fb")
+		)
+		(fp_line
+			(start -2.71 -3.4)
+			(end -2.71 1.51)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "ff734b91-0885-4c7d-aae7-6488ebe0a911")
+		)
+		(fp_line
+			(start 7.79 -3.4)
+			(end -2.71 -3.4)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d146708a-1d66-4e1a-9af6-77a393f81039")
+		)
+		(fp_line
+			(start -2.46 1.25)
+			(end 7.54 1.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "8a706ebe-6aa8-474a-a988-92d0491e093b")
+		)
+		(fp_line
+			(start 7.54 1.25)
+			(end 7.54 -3.15)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "c4432663-ec93-40d4-bc7b-7aa2e9f9ccb0")
+		)
+		(fp_line
+			(start -2.46 -1.88)
+			(end 7.54 -1.88)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "7dca475c-4a25-4215-ad60-4b3f3e1fae30")
+		)
+		(fp_line
+			(start -2.46 -3.15)
+			(end -2.46 1.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "516af494-7044-486a-82a2-64b3e316887a")
+		)
+		(fp_line
+			(start 0.69 -3.15)
+			(end 0.69 -1.88)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "51acc6b4-6124-44a7-bcf4-d84a1b808dec")
+		)
+		(fp_line
+			(start 4.39 -3.15)
+			(end 4.39 -1.88)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "4710bb3c-0cef-46cc-8431-2e70cd39c570")
+		)
+		(fp_line
+			(start 7.54 -3.15)
+			(end -2.46 -3.15)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "253cf30a-15c3-4cd2-a968-29c6baf4d7f3")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.54 -4.27 90)
+			(layer "F.Fab")
+			(uuid "643797ed-93c7-423b-a9a6-291b4b442b1d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 270)
+			(size 1.905 2)
+			(drill 1.1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 3 "Vcc")
+			(pinfunction "VI")
+			(pintype "power_in")
+			(uuid "5616257f-9242-4813-b9bf-adf8a6101159")
+		)
+		(pad "2" thru_hole oval
+			(at 2.54 0 270)
+			(size 1.905 2)
+			(drill 1.1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 4 "GND")
+			(pinfunction "GND")
+			(pintype "power_in")
+			(uuid "186a08bb-6046-4eae-a7f5-0002727fc9fd")
+		)
+		(pad "3" thru_hole oval
+			(at 5.08 0 270)
+			(size 1.905 2)
+			(drill 1.1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 17 "Net-(U1-VO)")
+			(pinfunction "VO")
+			(pintype "power_out")
+			(uuid "0cf8726d-0181-4ff6-8072-175f87a01b3c")
+		)
+		(model "${KICAD8_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "bfd13e2d-15c9-474b-a0b5-efc1714ac15a")
@@ -3229,7 +3534,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/7c22d52a-c3e8-4782-a411-b4eb8c4c4944")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3442,7 +3747,7 @@
 		(descr "Resistor, Axial_DIN0204 series, Axial, Horizontal, pin pitch=7.62mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0204 series Axial Horizontal pin pitch 7.62mm 0.167W length 3.6mm diameter 1.6mm")
 		(property "Reference" "R2"
-			(at 3.81 -1.92 360)
+			(at 3.81 -1.92 0)
 			(layer "F.SilkS")
 			(uuid "84f9fd4e-d6d7-49e1-93cb-c608c37b79a6")
 			(effects
@@ -3453,7 +3758,7 @@
 			)
 		)
 		(property "Value" "100k"
-			(at 3.81 1.92 360)
+			(at 3.81 1.92 0)
 			(layer "F.Fab")
 			(uuid "a4f113cd-e079-467d-a61d-9c52e2d6407e")
 			(effects
@@ -3504,7 +3809,7 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/9e83a738-a45a-4182-afe9-41d69617f251")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3668,7 +3973,7 @@
 			(uuid "8a0feca5-1a24-455b-abf1-ff3ba994860e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.81 0 360)
+			(at 3.81 0 0)
 			(layer "F.Fab")
 			(uuid "36e8ff2f-d81c-49aa-a29a-629a513e314b")
 			(effects
@@ -3684,7 +3989,7 @@
 			(drill 0.7)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 6 "Net-(U4-Pin_5)")
+			(net 17 "Net-(U1-VO)")
 			(pintype "passive")
 			(uuid "89df5934-b553-4023-9622-8eee065c8d03")
 		)
@@ -3717,7 +4022,7 @@
 		(descr "Terminal Block Phoenix MKDS-3-2-5.08, 2 pins, pitch 5.08mm, size 10.2x11.2mm^2, drill diamater 1.3mm, pad diameter 2.6mm, see http://www.farnell.com/datasheets/2138224.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix")
 		(tags "THT Terminal Block Phoenix MKDS-3-2-5.08 pitch 5.08mm size 10.2x11.2mm^2 drill 1.3mm pad 2.6mm")
 		(property "Reference" "J3"
-			(at 2.54 -6.96 360)
+			(at 2.54 -6.96 0)
 			(layer "F.SilkS")
 			(uuid "1bfb8a6c-475c-45c9-86ef-d213cc140cb7")
 			(effects
@@ -3728,7 +4033,7 @@
 			)
 		)
 		(property "Value" "SIN"
-			(at 2.54 6.36 360)
+			(at 2.54 6.36 0)
 			(layer "F.Fab")
 			(uuid "2820d1dd-f0a5-4c1a-9041-7d3d6f29aeef")
 			(effects
@@ -3779,7 +4084,7 @@
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/a930909c-84d3-407b-820c-6f3e17e2b6c7")
-		(sheetname "Raíz")
+		(sheetname "Root")
 		(sheetfile "modulador_triangular.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4157,7 +4462,7 @@
 			(uuid "d7b77bf6-687a-47cc-ada0-f85e1c3fe8d6")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.54 3.1 360)
+			(at 2.54 3.1 0)
 			(layer "F.Fab")
 			(uuid "e2f1084d-76da-4a87-8b41-dc29538384ed")
 			(effects
