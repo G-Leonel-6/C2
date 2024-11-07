@@ -479,7 +479,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "modulador_triangular.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
@@ -603,7 +603,7 @@
   "sheets": [
     [
       "2b400cfa-efc2-4e32-b6b6-fe8ff679fa68",
-      "Raíz"
+      "Root"
     ]
   ],
   "text_variables": {}
