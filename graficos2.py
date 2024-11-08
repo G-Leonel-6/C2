@@ -32,6 +32,9 @@ ruta_txt_senoidal = 'trazas/checkpoint4/senoidal.txt'
 ruta_txt_triangular = 'trazas/checkpoint4/triangular.txt'
 ruta_txt_duty = 'trazas/checkpoint4/variacion_duty.txt'
 ruta_txt_cte = 'trazas/checkpoint4/pwm_salida_a_entrada_cte.txt'
+ruta_txt_vo_buck = 'trazas/checkpoint4/buck_vo.txt'
+ruta_txt_il_buck = 'trazas/checkpoint4/buck_il.txt'
+
 # Esta son listas aca pones entre comillas los nombres que van a identificar tus columnas en el dataframe
 # los nombres van entre comillas
 nombres_senoidal_txt = ['time', 'v']
@@ -42,6 +45,9 @@ df_senoidal = leer_txt(ruta_txt_senoidal, nombres_senoidal_txt, 1)
 df_triangular = leer_txt(ruta_txt_triangular, nombres_senoidal_txt, 1)
 df_cte = leer_txt(ruta_txt_cte, nombres_senoidal_txt, 1)
 df_duty = leer_txt(ruta_txt_duty, nombres_senoidal_txt, 1)
+df_buck_vo = leer_txt(ruta_txt_vo_buck, nombres_senoidal_txt, 1)
+df_buck_il = leer_txt(ruta_txt_il_buck, nombres_senoidal_txt, 1)
+
 
 plt.figure(figsize=(10,8))
 plt.grid()
@@ -70,6 +76,39 @@ plt.savefig("salida_duty_variando.png")
 plt.figure(figsize=(10,8))
 plt.grid()
 plt.xlim([0, 100])
+plt.ylim([4.7, 7.5])
+plt.ylabel('V')
+plt.xlabel('us')
+plt.plot(df_triangular['time']*10**6, df_triangular['v'], label='Señal triangular generada')
+plt.plot(df_senoidal['time']*10**6, df_senoidal['v'], label="Señal senoidal de referencia")
+plt.legend()
+plt.savefig("triangular_senoidal.png")
+
+
+plt.figure(figsize=(10,8))
+plt.grid()
+plt.xlim([0, 9])
+plt.ylabel('V')
+plt.xlabel('ms')
+plt.plot(df_buck_vo['time']*10**3, df_buck_vo['v'])
+plt.savefig("buck_vo_transitorio.png")
+
+plt.figure(figsize=(10,8))
+plt.grid()
+plt.xlim([7.5, 7.55])
+plt.ylabel('V')
+plt.xlabel('ms')
+plt.plot(df_buck_vo['time'][300000:]*10**3, df_buck_vo['v'][300000:])
+plt.savefig("ripple_tension_buck.png")
+
+plt.figure(figsize=(10,8))
+plt.grid()
+plt.xlim([7.5, 7.55])
+plt.ylabel('mA')
+plt.xlabel('ms')
+plt.plot(df_buck_il['time'][300000:]*10**3, df_buck_il['v'][300000:]*10**3)
+plt.savefig("ripple_corriente_buck.png")
+
 plt.ylabel('V')
 plt.xlabel('us')
 plt.plot(df_triangular['time']*10**6, df_triangular['v'])
