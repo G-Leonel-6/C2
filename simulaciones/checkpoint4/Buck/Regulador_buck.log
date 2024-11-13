@@ -1,11 +1,11 @@
 LTspice 24.0.12 for Windows
 Circuit: * F:\uni\Circuitos 2\C2\simulaciones\checkpoint4\Buck\Regulador_buck.asc
-Start Time: Fri Nov  8 03:05:18 2024
+Start Time: Wed Nov 13 02:40:58 2024
 solver = Normal
 Maximum thread count: 4
 tnom = 27
 temp = 27
 method = modified trap
 Direct Newton iteration for .op point succeeded.
-Total elapsed time: 4.662 seconds.
+Total elapsed time: 4.649 seconds.
 

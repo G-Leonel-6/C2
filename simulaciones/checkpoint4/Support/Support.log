@@ -1,0 +1,149 @@
+LTspice 24.0.12 for Windows
+Circuit: * F:\uni\DCE\Checkpoint 4\Support\Support.asc
+Start Time: Fri Nov  8 04:11:39 2024
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+solver = Normal
+Maximum thread count: 4
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+Gmin = 1.86414
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+Gmin = 1.89914
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 1.89171
+vernier = 0.00520833
+vernier = 0.00260417
+vernier = 0.00130208
+Gmin = 1.88434
+vernier = 0.00173611
+vernier = 0.00231481
+vernier = 0.00115741
+vernier = 0.000578703
+Gmin = 1.87835
+vernier = 0.000771604
+Gmin = 1.87519
+vernier = 0.00102881
+vernier = 0.00137174
+vernier = 0.00068587
+vernier = 0.000514403
+Gmin = 1.87193
+vernier = 0.00068587
+Gmin = 1.86913
+vernier = 0.000914493
+vernier = 0.000457246
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source Step = 99.6686%
+vernier = 0.00390625
+Source Step = 99.6567%
+Source Step = 99.6863%
+Source Step = 99.7159%
+Source Step = 99.7455%
+Source Step = 99.7751%
+vernier = 0.00146484
+Source Step = 99.815%
+Source Step = 99.8594%
+Source Step = 99.9038%
+Source Step = 99.9482%
+Source Step = 99.9926%
+Source stepping succeeded in finding the operating point.
+
+Semiconductor Device Operating Points:
+                        --- Diodes ---
+Name:    d:u1:1      d:u1:2      d:u1:3      d:u2:5      d:u2:1
+Model:  u1:dmod1    u1:dmod1    u1:dmod2     u2:dlat     u2:dlat
+Id:      1.73e-03   -6.20e-12   -4.13e-12   -1.57e-06    7.86e-06
+Vd:      6.70e-01   -6.19e+00   -4.12e+00   -1.57e-02    7.86e-02
+Req:     1.50e+01    1.00e+12    1.00e+12    1.00e-04    1.00e-04
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:u2:13     d:u2:14     d:u2:3      d:u2:7      d:u2:4
+Model:   u2:dp1      u2:dp2       u2:xu       u2:xu       u2:xd
+Id:      3.00e-03    1.77e-02   -4.89e-09   -5.43e-09   -5.64e-09
+Vd:      1.19e+01    1.19e+01   -8.31e+00   -9.24e+00   -3.59e+00
+Req:     1.00e-02    1.00e-02    5.88e-10    5.88e-10    1.57e-09
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:u2:8      d:u2:15     d:u2:18     d:u2:16     d:u2:19
+Model:    u2:xd     u2:dvlu1    u2:dvlu1    u2:dvlu2    u2:dvlu2
+Id:     -4.18e-09    2.62e-10    1.36e-10    2.44e-11    2.04e-11
+Vd:     -2.66e+00    2.44e+00    2.04e+00    2.44e+00    2.04e+00
+Req:     1.57e-09    6.67e-10    6.67e-10    1.00e-11    1.00e-11
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:u2:17     d:u2:20     d:u2:2      d:u2:6      d:u2:9
+Model:   u2:dvld     u2:dvld    u2:dbiasc   u2:dbias    u2:dbias
+Id:     -3.45e-11   -2.56e-11   -1.24e-06    2.50e-06    2.50e-06
+Vd:     -3.45e+00   -2.56e+00   -1.43e-04    5.57e+00    5.57e+00
+Req:     1.00e-11    1.00e-11    1.00e+00    1.00e-03    1.00e-03
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:u2:10     d:u3:c      d:u3:e      d:u3:lp     d:u3:ln
+Model:  u2:dlatch     u3:dx       u3:dx       u3:dx       u3:dx
+Id:      5.00e-04   -8.59e-12   -6.13e-13   -4.00e-11   -4.00e-11
+Vd:      1.19e+01   -8.59e+00   -6.12e-01   -4.00e+01   -4.00e+01
+Req:     1.00e-03    1.00e+12    1.00e+12    1.00e+12    1.00e+12
+CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+Name:    d:u3:p
+Model:    u3:dx
+Id:     -1.19e-11
+Vd:     -1.19e+01
+Req:     1.00e+12
+CAP:     0.00e+00
+
+                        --- Bipolar Transistors ---
+Name:       q1        q:u3:1      q:u3:2
+Model:    bc847b       u3:qx       u3:qx
+Ib:       4.56e-06   -2.03e-08   -2.05e-08
+Ic:       1.31e-03   -5.09e-06   -5.12e-06
+Vbe:      6.11e-01   -5.84e-01   -5.84e-01
+Vbc:     -5.71e+00    1.17e+00    1.17e+00
+Vce:      6.33e+00   -1.76e+00   -1.76e+00
+BetaDC:   2.88e+02    2.50e+02    2.50e+02
+Gm:       5.06e-02    1.97e-04    1.98e-04
+Rpi:      5.68e+03    1.27e+06    1.26e+06
+Rx:       1.39e+01    0.00e+00    0.00e+00
+Ro:       9.08e+04    1.53e+33    1.49e+33
+Cbe:      3.55e-11    0.00e+00    0.00e+00
+Cbc:      1.91e-12    0.00e+00    0.00e+00
+Cjs:      0.00e+00    0.00e+00    0.00e+00
+BetaAC:   2.87e+02    2.50e+02    2.50e+02
+Cbx:      0.00e+00    0.00e+00    0.00e+00
+Ft:       2.15e+08    0.00e+00    0.00e+00
+
+                        --- VDMOSFET Transistors ---
+Name:        m:u2:1      m:u2:3      m:u2:2      m:u2:4
+Model:        u2:n        u2:n        u2:p        u2:p
+Id:          4.20e-03    4.61e-03   -4.20e-03   -4.61e-03
+Vgs:        -1.05e+00   -6.35e-01   -4.31e-02   -1.12e-01
+Vds:         8.40e+00    9.23e+00   -3.50e+00   -2.67e+00
+Vth:        -3.00e-01   -3.00e-01    4.00e-01    4.00e-01
+Gm:          0.00e+00    0.00e+00    1.11e-02    1.28e-02
+Gds:         0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgs:         0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgd:         0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cbody:       0.00e+00    0.00e+00    0.00e+00    0.00e+00
+
+
+Total elapsed time: 0.487 seconds.
+
