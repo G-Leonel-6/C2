@@ -39,6 +39,7 @@ ruta_txt_imax_36_buck = 'trazas/checkpoint4/Buck_Vin_36_imax.txt'
 ruta_txt_imin_12_buck = 'trazas/checkpoint4/Buck_Vin_12_imin.txt'
 ruta_txt_imax_12_buck = 'trazas/checkpoint4/Buck_Vin_12_imax.txt'
 ruta_txt_corriente_min = 'trazas/checkpoint4/Buck_corriente_caso_min'
+ruta_txt_cuadrada = 'trazas/checkpoint4/cuadrada.txt'
 
 # Esta son listas aca pones entre comillas los nombres que van a identificar tus columnas en el dataframe
 # los nombres van entre comillas
@@ -57,6 +58,7 @@ df_buck_12_imin = leer_txt(ruta_txt_imin_12_buck, nombres_senoidal_txt, 1)
 df_buck_36_imax = leer_txt(ruta_txt_imax_36_buck, nombres_senoidal_txt, 1)
 df_buck_36_imin = leer_txt(ruta_txt_imin_36_buck, nombres_senoidal_txt, 1)
 df_buck_corriente_caso_min = leer_txt(ruta_txt_corriente_min, nombres_senoidal_txt, 1)
+df_cuadrada = leer_txt(ruta_txt_cuadrada, nombres_senoidal_txt, 1)
 
 plt.figure(figsize=(10,8))
 plt.grid()
@@ -76,7 +78,7 @@ plt.savefig("salida_duty_cte.png")
 
 plt.figure(figsize=(10,8))
 plt.grid()
-plt.xlim([0, 100])
+plt.xlim([0, 80])
 plt.ylabel('Tensión [V]')
 plt.xlabel('Tiempo [us]')
 plt.plot(df_duty['time']*10**6, df_duty['v'])
@@ -84,8 +86,8 @@ plt.savefig("salida_duty_variando.png")
 
 plt.figure(figsize=(10,8))
 plt.grid()
-plt.xlim([0, 100])
-plt.ylim([4.7, 7.5])
+plt.xlim([0, 80])
+plt.ylim([4, 9.5])
 plt.ylabel('Tensión [V]')
 plt.xlabel('Tiempo [us]')
 plt.plot(df_triangular['time']*10**6, df_triangular['v'], label='Señal triangular generada')
@@ -103,31 +105,27 @@ plt.plot(df_buck_vo['time']*10**3, df_buck_vo['v'])
 plt.savefig("buck_vo_transitorio.png")
 
 
-fig, axs = plt.subplots(1, 2, sharey=True)
-axs[0].grid()
-axs[1].grid()
-axs[0].set_xlabel("Tiempo [ms]")
-axs[1].set_xlabel("Tiempo [ms]")
-axs[0].set_ylabel("Vo [V]")
-axs[0].plot(df_buck_12_imin['time']*10**3, df_buck_12_imin['v'], "-r", label="Tensión de salida con corriente \n"
-                                                                             " mínima y Vin 12V")
-axs[1].plot(df_buck_12_imax['time']*10**3, df_buck_12_imax['v'], label="Tensión de salida con corriente \n "
-                                                                       "máxima y Vin 12V")
-fig.legend()
-fig.savefig("vo_vin12.png")
+plt.figure()
+plt.grid()
+plt.xlabel("Tiempo [ms]")
+plt.ylabel("Vo [V]")
+plt.plot(df_buck_12_imin['time']*10**3, df_buck_12_imin['v'], "-r", label="Tensión de salida con corriente \n"
+                                                                                " mínima y Vin 12V")
+plt.plot(df_buck_12_imax['time']*10**3, df_buck_12_imax['v'], label="Tensión de salida con corriente \n "
+                                                                          "máxima y Vin 12V")
+plt.legend()
+plt.savefig("vo_vin12.png")
 
-fig, axs = plt.subplots(1, 2, sharey=True)
-axs[0].grid()
-axs[1].grid()
-axs[0].set_xlabel("Tiempo [ms]")
-axs[1].set_xlabel("Tiempo [ms]")
-axs[0].set_ylabel("Vo [V]")
-axs[0].plot(df_buck_36_imin['time']*10**3, df_buck_36_imin['v'], "-r",label="Tensión de salida con corriente \n"
+plt.figure()
+plt.grid()
+plt.xlabel("Tiempo [ms]")
+plt.ylabel("Vo [V]")
+plt.plot(df_buck_36_imin['time']*10**3, df_buck_36_imin['v'], "-r",label="Tensión de salida con corriente \n"
                                                                        "mínima y Vin 36V")
-axs[1].plot(df_buck_36_imax['time']*10**3, df_buck_36_imax['v'], label="Tensión de salida con corriente \n"
+plt.plot(df_buck_36_imax['time']*10**3, df_buck_36_imax['v'], label="Tensión de salida con corriente \n"
                                                                        "máxima y Vin 36V")
-fig.legend()
-fig.savefig("vo_vin36.png")
+plt.legend()
+plt.savefig("vo_vin36.png")
 
 plt.figure()
 plt.grid()
@@ -147,6 +145,17 @@ plt.xlabel("Tiempo [ms]")
 plt.ylim([6.15,6.55])
 plt.xlim([9.5,9.55])
 plt.plot(df_buck_12_imin['time']*10**3, df_buck_12_imin['v'], label="Ripple de Tensión del inductor \n"
-                                                                           "en el caso de mínima corriente")
+                                                                          "en el caso de mínima corriente")
+
 plt.legend()
 plt.savefig("ripple_tension_buck.png")
+
+plt.figure()
+plt.grid()
+plt.xlabel("Tiempo [us]")
+plt.ylabel('Tensión [V]')
+plt.xlim([0, 80])
+plt.ylim([0, 14])
+plt.plot(df_cuadrada['time']*10**6, df_cuadrada['v'], label='Onda cuadrada generada en el oscilador')
+plt.legend()
+plt.savefig('onda_cuadrada.png')

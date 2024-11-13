@@ -1,0 +1,35 @@
+* C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint4\Support\Support.asc
+XU1 0 vb r TL431
+Q1 Vin vb Vo 0 BC847B
+R1 vb Vin 3.3k
+V1 Vin 0 11.85
+R2 Vo r 30k
+R3 r 0 24.7k
+R4 Vo N004 3.6k
+R5 N004 0 1k
+XU2 Vin V+ Vo 0 0 0 Ven1 NC_01 LT1016
+R6 Vin N002 11k
+R7 V+ 0 10k
+XU3 N004 Vref Vin 0 Vref LM324
+XU4 Vo Vsup Vin 0 Vsup LM324
+XU5 Vin V+2 Vo 0 0 0 NC_02 Ven2 LT1016
+R9 Vin N001 51k
+R11 P001 0 10k
+R8 N002 V+ 270
+R10 N001 V+2 3.6k
+M1 Vsup Ven2 N003 N003 FDS6680
+R13 ven 0 22k
+R12 V+2 P001 68
+M2 N003 Ven1 ven ven FDS6680
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.bjt
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.mos
+.op
+.include TL431.lib
+.include LM324.ti.lib
+.lib LTC.lib
+.backanno
+.end
