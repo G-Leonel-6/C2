@@ -40,6 +40,9 @@ ruta_txt_imin_12_buck = 'trazas/checkpoint4/Buck_Vin_12_imin.txt'
 ruta_txt_imax_12_buck = 'trazas/checkpoint4/Buck_Vin_12_imax.txt'
 ruta_txt_corriente_min = 'trazas/checkpoint4/Buck_corriente_caso_min'
 ruta_txt_cuadrada = 'trazas/checkpoint4/cuadrada.txt'
+ruta_txt_buck_driver = 'trazas/checkpoint4/buck_driver.txt'
+ruta_txt_vgs1 = 'trazas/checkpoint4/vgs1.txt'
+ruta_txt_vgs2 = 'trazas/checkpoint4/vgs2.txt'
 
 # Esta son listas aca pones entre comillas los nombres que van a identificar tus columnas en el dataframe
 # los nombres van entre comillas
@@ -59,6 +62,9 @@ df_buck_36_imax = leer_txt(ruta_txt_imax_36_buck, nombres_senoidal_txt, 1)
 df_buck_36_imin = leer_txt(ruta_txt_imin_36_buck, nombres_senoidal_txt, 1)
 df_buck_corriente_caso_min = leer_txt(ruta_txt_corriente_min, nombres_senoidal_txt, 1)
 df_cuadrada = leer_txt(ruta_txt_cuadrada, nombres_senoidal_txt, 1)
+df_buck_driver = leer_txt(ruta_txt_buck_driver, nombres_senoidal_txt, 1)
+df_vgs1 = leer_txt(ruta_txt_vgs1, nombres_senoidal_txt, 1)
+df_vgs2 = leer_txt(ruta_txt_vgs2, nombres_senoidal_txt, 1)
 
 plt.figure(figsize=(10,8))
 plt.grid()
@@ -131,8 +137,8 @@ plt.figure()
 plt.grid()
 plt.ylabel("Corriente [mA]")
 plt.xlabel("Tiempo [ms]")
-plt.ylim([0,25])
-plt.xlim([8,8.05])
+plt.ylim([0,180])
+plt.xlim([2,2.05])
 plt.plot(df_buck_corriente_caso_min['time']*10**3, df_buck_corriente_caso_min['v']*10**3
          , label="Ripple de corriente del inductor \nen el caso mínima corriente")
 plt.legend()
@@ -159,3 +165,33 @@ plt.ylim([0, 14])
 plt.plot(df_cuadrada['time']*10**6, df_cuadrada['v'], label='Onda cuadrada generada en el oscilador')
 plt.legend()
 plt.savefig('onda_cuadrada.png')
+
+plt.figure()
+plt.grid()
+plt.ylabel("Tensión [V]")
+plt.xlabel("Tiempo [ms]")
+plt.xlim([0, 3])
+plt.plot(df_buck_driver['time']*10**3, df_buck_driver['v'], label="Tensión de salida con gate driver")
+
+plt.legend()
+plt.savefig("buck_driver_vo.png")
+
+plt.figure()
+plt.grid()
+plt.ylabel("Tensión [V]")
+plt.xlabel("Tiempo [ms]")
+plt.ylim([6.25, 6.50])
+plt.xlim([2.5, 2.6])
+plt.plot(df_buck_driver['time']*10**3, df_buck_driver['v'], label="ripple_driver")
+plt.legend()
+plt.savefig("buck_driver_vo_ripple.png")
+
+plt.figure()
+plt.grid()
+plt.ylabel("Tensión [V]")
+plt.xlabel("Tiempo [us]")
+plt.xlim([45, 65])
+plt.plot(df_vgs1['time']*10**6, df_vgs1['v'], label="Tensión vgs del mosfet M1")
+plt.plot(df_vgs2['time']*10**6, df_vgs2['v'], label="Tensión vgs del mosfet M2")
+plt.legend()
+plt.savefig("Tensiones_vgs.png")

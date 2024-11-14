@@ -1,13 +1,13 @@
 LTspice 24.0.12 for Windows
-Circuit: * F:\uni\Circuitos 2\C2\simulaciones\checkpoint4\Buck\Regulador_buck.asc
-Start Time: Wed Nov 13 16:28:49 2024
+Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint4\Buck\Regulador_buck.asc
+Start Time: Thu Nov 14 00:33:02 2024
 solver = Normal
-Maximum thread count: 4
+Maximum thread count: 16
 tnom = 27
 temp = 27
 method = modified trap
 Direct Newton iteration for .op point succeeded.
-Heightened Def Con from 0.00142617 to 0.00142617
-Heightened Def Con from 0.0027 to 0.0027
-Total elapsed time: 13.778 seconds.
+Heightened Def Con from 0.00118622 to 0.00118622
+Heightened Def Con from 0.00139 to 0.00139
+Total elapsed time: 4.363 seconds.
 
