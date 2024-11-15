@@ -148,8 +148,8 @@ plt.figure()
 plt.grid()
 plt.ylabel("Tensión [V]")
 plt.xlabel("Tiempo [ms]")
-plt.ylim([6.15,6.55])
-plt.xlim([9.5,9.55])
+plt.ylim([6.25,6.45])
+plt.xlim([2.3,2.4])
 plt.plot(df_buck_12_imin['time']*10**3, df_buck_12_imin['v'], label="Ripple de Tensión del inductor \n"
                                                                           "en el caso de mínima corriente")
 
