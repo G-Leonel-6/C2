@@ -1,0 +1,68 @@
+* C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint4\Buck\Regulador_buck.asc
+V1 N004 0 {Vin}
+L1 Vd Vo 200µ
+C1 Vo 0 2.7µ
+R1 Vo 0 63.5
+M1 N004 V_M1 Vd Vd IRFZ44N
+M2 Vd V_M2 0 0 IRFZ44N
+V4 Vcc 0 10
+V5 PWM 0 PULSE(0 5 0 1n 1n {D} {T})
+C2 Vcc 0 10µ
+D1 Vcc N001 1N5819
+R2 V_M1 N002 10
+R3 V_M2 N003 10
+C3 N001 Vd 22µ
+V2 V_en 0 {V_enable}
+XX2 Vcc PWM V_en 0 N001 N002 Vd N003 ir2104
+
+* block symbol definitions
+.subckt ir2104 Vcc In _SD Com VB HO VS LO
+D1 In Vcc Dd
+D2 Com In Dd
+D3 HO VB Dd
+D4 VS HO Dd
+D5 VS VB 25V
+C2 VB HO 22p
+C3 HO VS 22p Rpar=100k
+S1 HO VB 4 0 SH
+S2 HO VS 5 0 SL
+A2 VB VS 0 0 0 0 3 0 SCHMITT Vt=8.9 Vh=.35
+C1 In Com 10p Rpar=1e6
+D6 Com VB 625V
+D7 _SD Vcc Dd
+D8 Com _SD Dd
+A4 _SD Com 0 0 0 0 6 0 SCHMITT Vt=1.9 Vh=1 Trise=120n Tripdt=25n
+A5 Vcc Com 0 0 0 0 7 0 SCHMITT Vt=8.9 Vh=.35
+C4 _SD Com 10p Rpar=1e6
+S3 LO Vcc 8 0 SH
+S4 LO Com 9 0 SL
+D9 LO Vcc Dd
+D10 Com LO Dd
+D11 Com Vcc 25V
+C5 Vcc LO 22p
+C6 LO Com 22p Rpar=100k
+A3 3 1 0 6 7 5 4 0 AND Trise=100n Tripdt=20n
+A6 7 6 0 2 0 9 8 0 AND Trise=100n Tripdt=20n
+A1 In Com 0 0 0 2 1 0 SCHMITT Vt=1.9 Vh=1 Trise=1110n Tfall=100n Tripdt=50n
+.model 25V D(Ron=.5 Vfwd=.5 Vrev=25.2 Roff=25e4)
+.model 625V D(Ron=.5 Vfwd=.5 Vrev=625 Roff=12e6)
+.model Dd D(Ron=.5 Vfwd=.5)
+.model SH SW(Vt=.5 Vh=-.5 Ron=42 Ilimit=.21)
+.model SL SW(Vt=.5 Vh=-.5 Ron=20 Ilimit=.36)
+.ends ir2104
+
+.model D D
+.lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\leone\AppData\Local\LTspice\lib\cmp\standard.mos
+.tran 0 2m 0 startup uic
+.include IR2104.sub
+.param Vin=36
+* PARAMETROS
+.param T=5u
+.param D=1.22u
+.param V_enable=3
+* MODELOS
+.backanno
+.end
