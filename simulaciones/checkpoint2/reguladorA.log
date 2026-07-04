@@ -1,12 +1,7 @@
 Stray ".ends" card: .ends
 LTspice 24.0.12 for Windows
-<<<<<<< HEAD
 Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint2\reguladorA.asc
-Start Time: Fri Sep 27 00:33:50 2024
-=======
-Circuit: * F:\uni\DCE\C2\simulaciones\checkpoint2\reguladorA.asc
-Start Time: Tue Sep 24 23:23:29 2024
->>>>>>> 496865cbf274c99a2298f5f20a94650800827c81
+Start Time: Mon Dec  9 16:57:18 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -16,8 +11,8 @@ Maximum thread count: 16
 tnom = 27
 temp = 27
 method = modified trap
-WARNING: Less than two connections to node n011.  This node is used by r6.
-WARNING: Less than two connections to node n020.  This node is used by v6.
+WARNING: Less than two connections to node n018.  This node is used by v6.
+WARNING: Less than two connections to node n029.  This node is used by v7.
 Instance "m:u2:1": Length shorter than recommended for a level 1 MOSFET.
 Instance "m:u2:8": Length shorter than recommended for a level 1 MOSFET.
 Instance "m:u2:2": Length shorter than recommended for a level 1 MOSFET.
@@ -45,41 +40,22 @@ Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to sk
 Starting Gmin stepping
 Gmin = 10
 vernier = 0.5
-Gmin = 1.86414
-vernier = 0.666667
-vernier = 0.333333
-vernier = 0.166667
-vernier = 0.0833333
-vernier = 0.0416667
-Gmin = 0.997517
-vernier = 0.0208333
-vernier = 0.0104167
-vernier = 0.00520833
-vernier = 0.00260417
-vernier = 0.00130208
-vernier = 0.000651042
+Gmin = 1.67772
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 1.32561
+vernier = 0.00195312
+vernier = 0.000976562
 vernier = 0.000488281
 Gmin = 0
-Gmin stepping failed
-
-Starting source stepping with srcstepmethod=0
-Source Step = 3.0303%
-Source Step = 33.3333%
-Source Step = 40.1515%
-Source Step = 47.7273%
-Source Step = 55.303%
-Source Step = 62.8788%
-Source Step = 70.4545%
-vernier = 0.375
-Source Step = 81.0606%
-Source Step = 92.4242%
-Source stepping succeeded in finding the operating point.
+Gmin stepping succeeded in finding the operating point.
 
 
 
-<<<<<<< HEAD
-Total elapsed time: 0.920 seconds.
-=======
-Total elapsed time: 2.276 seconds.
->>>>>>> 496865cbf274c99a2298f5f20a94650800827c81
+Total elapsed time: 2.175 seconds.
 

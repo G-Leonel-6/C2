@@ -28,7 +28,7 @@ def leer_txt(ruta_txt, nombres, saltar_filas=0):
 
 
 # ruta a la carpeta del archivo puede ser relativa (desde la posicion de este archivo) o absoluta
-ruta_txt_senoidal = 'trazas/checkpoint4/senoidal.txt'
+ruta_txt_senoidal = 'trazas/checkpoint5/senoidal.txt'
 ruta_txt_triangular = 'trazas/checkpoint4/triangular.txt'
 ruta_txt_duty = 'trazas/checkpoint4/variacion_duty.txt'
 ruta_txt_cte = 'trazas/checkpoint4/pwm_salida_a_entrada_cte.txt'

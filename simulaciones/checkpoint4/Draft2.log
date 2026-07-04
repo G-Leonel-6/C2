@@ -1,0 +1,5 @@
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint4\Draft2.asc
+Start Time: Thu Dec  5 20:28:27 2024
+Fatal Error: Unknown subcircuit called in:
+   xu1 0 vb r tl431

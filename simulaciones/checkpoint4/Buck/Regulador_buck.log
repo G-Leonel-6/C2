@@ -1,12 +1,27 @@
 LTspice 24.0.12 for Windows
 Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint4\Buck\Regulador_buck.asc
-Start Time: Tue Dec  3 20:50:31 2024
+Start Time: Fri Dec  6 18:28:55 2024
+Error on line 17 : s1 0 n005 n006 0 sw
+	 Unable to find definition of model "sw"
 solver = Normal
 Maximum thread count: 16
 tnom = 27
 temp = 27
 method = modified trap
 Per .tran options, skipping operating point for transient analysis.
-Heightened Def Con from 4.99998e-05 to 5.00003e-05
-Total elapsed time: 2.796 seconds.
+Heightened Def Con from 0.00074 to 0.000740001
+Heightened Def Con from 0.00333622 to 0.00333622
+Heightened Def Con from 0.003415 to 0.003415
+Heightened Def Con from 0.00448 to 0.00448
+Heightened Def Con from 0.00452122 to 0.00452122
+Heightened Def Con from 0.004705 to 0.004705
+Heightened Def Con from 0.00606622 to 0.00606622
+Heightened Def Con from 0.00608122 to 0.00608122
+Heightened Def Con from 0.006215 to 0.006215
+Heightened Def Con from 0.008205 to 0.008205
+Heightened Def Con from 0.00877122 to 0.00877122
+Heightened Def Con from 0.00949622 to 0.00949622
+Heightened Def Con from 0.009525 to 0.009525
+Heightened Def Con from 0.00992122 to 0.00992122
+Total elapsed time: 15.760 seconds.
 

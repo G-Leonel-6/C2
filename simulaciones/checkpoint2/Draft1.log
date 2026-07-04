@@ -1,11 +1,26 @@
 LTspice 24.0.12 for Windows
 Circuit: * C:\Users\leone\Documents\repos\C2\simulaciones\checkpoint2\Draft1.asc
-Start Time: Fri Sep 27 20:44:24 2024
+Start Time: Sun Mar 30 13:09:15 2025
 solver = Normal
 Maximum thread count: 16
+
+
+
+WARNING: Node N012 is floating.
+
+.OP point found by inspection.
+.step rval2=0.001 rval3=0.001
+
+
+
+.step rval2=40 rval3=0.001
+
+
+
+.step rval2=0.001 rval3=60
 tnom = 27
 temp = 27
 method = modified trap
-Direct Newton iteration for .op point succeeded.
-Total elapsed time: 0.045 seconds.
+.step rval2=40 rval3=60
+Total elapsed time: 0.280 seconds.
 
